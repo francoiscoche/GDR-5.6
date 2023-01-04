@@ -1,0 +1,75 @@
+/* *********************************************************************************************
+************************* CUSTOM CSS FILE TO OVERLOAD LEGACY STYLES ***************************
+*********************************************************************************************/
+
+#framecontentLeft {
+  background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree.png");
+  color: white;
+}
+
+#framecontentRight {
+  background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree.png");
+  color: white;
+}
+
+#maincontent {
+  background: black;
+  color: white;
+}
+
+.pagina_mappaclick .page_title {
+  display: none;
+}
+div.output {
+  background: url("imgs/custom_imgs/mainmap_BIG.png") no-repeat top center
+    #b9b9b9;
+  background-color: black !important;
+}
+
+div.pagina_info_location,
+div.messages,
+div.forums,
+div.menu,
+div.presenti,
+div.output {
+  background-color: #b9b9b933;
+}
+
+a,
+a:visited,
+div.box_messages a,
+div.pagina_presenti {
+  color: white !important;
+}
+
+div.link_menu a:hover {
+  background-color: #5e7458;
+}
+.luogo {
+  color: white !important;
+}
+
+span.chat_msg {
+  color: white;
+}
+div.pagina_scheda {
+  background: #00000087 !important;
+  border: 1px #646464 solid;
+}
+
+/* @media only screen and (min-width: 600px) {
+  body {
+    zoom: 0.8;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    zoom: 0.9;
+  }
+} */
+@media only screen and (max-width: 1300px) {
+  body.main_body {
+    zoom: 0.7 !important;
+  }
+}
