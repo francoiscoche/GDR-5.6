@@ -1,14 +1,23 @@
 /* *********************************************************************************************
 ************************* CUSTOM CSS FILE TO OVERLOAD LEGACY STYLES ***************************
 *********************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 #framecontentLeft {
-  background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree.png");
+  /* background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree.png"); */
+  background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree_border.png");
+  background-size: cover;
   color: white;
 }
 
 #framecontentRight {
-  background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree.png");
+  /* background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree.png"); */
+  background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree_border.png");
+  background-size: cover;
   color: white;
 }
 
@@ -17,22 +26,84 @@
   color: white;
 }
 
+div.innertube {
+  vertical-align: top;
+}
+
 .pagina_mappaclick .page_title {
   display: none;
 }
-div.output {
+
+.pagina_mappaclick {
   background: url("imgs/custom_imgs/mainmap_BIG.png") no-repeat top center
     #b9b9b9;
-  background-color: black !important;
+  background-color: #020c0d !important;
+
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  left: 0px;
+}
+div.output {
+  background: none;
+  border-radius: 0px;
+  border: 0px;
+  margin-top:0px;
+}
+
+div.menu {
+ background-color: #ffffff00;
+ border:none;
+ border-radius:0px;
+}
+
+div.link_menu {
+  padding: 0 0 0 60px;
+}
+
+div.link_menu a:hover {
+  background-color: #ffffff00 !important;
+}
+
+div.link_menu img {
+  transition: transform .2s; /* Animation */
+  background-color: #000000ad;
+  border-radius: 80px;
+  padding: 4px;
+}
+
+div.link_menu img:hover {
+  transform: scale(1.2);
 }
 
 div.pagina_info_location,
-div.messages,
-div.forums,
-div.menu,
-div.presenti,
+div.presenti {
+  border:none;
+  border-radius:0px;
+  background-color: #00000000;
+}
+
 div.output {
-  background-color: #b9b9b933;
+  background-color: #020c0d;
+  border:none;
+  border-radius:0px;
+}
+
+div.box_messages,
+div.box_forums {
+  text-align: initial;
+}
+
+div.documentazione {
+  margin: 5px auto;
+  padding: 10px;
+  width: 180px;
+  border: solid 1px #444;
+  -moz-border-radius: 5px; /* Bordi arrotondati */
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
 }
 
 a,
@@ -45,6 +116,10 @@ div.pagina_presenti {
 div.link_menu a:hover {
   background-color: #5e7458;
 }
+
+div.link_menu a {
+  padding: 2px;
+}
 .luogo {
   color: white !important;
 }
@@ -55,8 +130,16 @@ span.chat_msg {
 div.pagina_scheda {
   background: #00000087 !important;
   border: 1px #646464 solid;
+  width: 757px;
+}
+div.background {
+  width: 757px;
+  padding: 0px 20px 0 20px;
 }
 
+div.menu_scheda {
+  width: 757px;
+}
 /* @media only screen and (min-width: 600px) {
   body {
     zoom: 0.8;
@@ -72,4 +155,90 @@ div.pagina_scheda {
   body.main_body {
     zoom: 0.7 !important;
   }
+}
+
+table, td.casella_elemento, div.elementi_elenco, .link_back {
+  background-color: #ffffff00 !important;
+}
+
+
+div.presenti iframe.iframe_presenti {
+  height: 300px;
+}
+
+.icon-lateral {
+  width: 30px;
+  transition: transform .2s; /* Animation */
+
+
+}
+
+.icon-lateral {
+  background-color: #000000ad;
+  border-radius: 80px;
+  padding: 4px;
+}
+
+.icon-lateral:hover {
+  transform: scale(1.2);
+}
+
+
+
+div.documentazione,
+div.forums,
+div.messages {
+  background-color: #ffffff00;
+  border: none;
+  border-radius: 80px;
+  width: 73px;
+
+}
+.documentazione iframe,
+.forums iframe,
+.messages iframe {
+  height: 60px;
+  width: 60px;
+}
+
+/* scroll bar *
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* logout page */
+
+.logout_body {
+  background-image: url("../advanced/imgs/custom_imgs/EXIT_completa.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #031011;
+  background-position: center;
+}
+
+
+.pagina_scheda {
+  background-image: url("../advanced/imgs/custom_imgs/scheda_sfondo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #031011;
+  background-position: center;
 }

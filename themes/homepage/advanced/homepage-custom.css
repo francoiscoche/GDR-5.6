@@ -1,0 +1,84 @@
+/* *********************************************************************************************
+************************* CUSTOM CSS FILE TO OVERLOAD LEGACY STYLES ***************************
+*********************************************************************************************/
+
+
+.login-table {
+    background-image: url(img/login.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 760px;
+    width: 816px;
+    position: fixed;
+    top: 365px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15px;
+}
+
+.login-table input {
+    border: none;
+    color: #ffffff;
+    background: transparent;
+    width: 159px;
+    height: 26px;
+    padding: 0 0 0 3px;
+
+    margin-right: 70px;
+    margin-left: 100px;
+}
+
+.login-table #username {
+    margin-top: 88px;
+}
+
+.login-table #password {
+    margin-top: 20px;
+}
+
+
+.main_body {
+    background: #031011;
+    transform: scale(0.7);
+}
+.div-form {
+    width: 392px;
+    height: 395px;
+    text-align: center;
+}
+
+div.documenti {
+    background-image: url(img/login_documentazione.png);
+    width: 220px;
+    height: 50px;
+    margin-right: 0px;
+    background-repeat: no-repeat;
+}
+
+div.crediti {
+    background-image: url(img/login_ringraziamenti.png);
+    width: 220px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 1px;
+    background-repeat: no-repeat;
+}
+
+div.iscrizione {
+    background-image: url(img/login_iscrizione.png);
+    width: 220px;
+    height: 50px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+}
+
+
+/* iscrizione */
+
+.pagina_iscrizione {
+    background-image: url(img/iscrizione.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #031011;
+    background-position: center;
+}
