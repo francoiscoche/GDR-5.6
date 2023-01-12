@@ -118,3 +118,13 @@ const FULL_PERM = MODERATOR;
 /*Vettori globali dei parametri*/
 $PARAMETER = array();
 $MESSAGES = array();
+
+/**
+ * Conoscenze PG
+ */
+
+//Attiva o disattiva i contatti del PG
+CONST PG_CONTACT_ENABLED = true;
+
+//definisce quali permessi possono modificare i contatti del pg  (default: gamemaster)
+const PERMESSI_CONOSCENZE = MODERATOR;
