@@ -1,0 +1,135 @@
+
+
+.newtab {
+  background-color: black;
+  /* background: url('../img/sfondodoc.png'); */
+  /* background-position: 50% 50%;
+  height: 815px;
+  position:absolute;
+  transform: translate(-50%, -50%); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat;
+  background-color: black;
+
+  width: auto;
+
+
+  background-size: contain;
+  background-position: top;
+  border: 1px solid; */
+}
+div.tabs {
+  background: url('../img/sfondodoc.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  width:1200px;
+  height: 680px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+  zoom: 0.7;
+-ms-zoom: 0.7;
+-webkit-zoom: 0.7;
+-moz-transform:  scale(0.7,0.7);
+
+}
+.tab-content  {
+  /* top: 138px;
+  position: relative;
+  left: 135px;
+  width: 615px;
+
+  max-height: 429px;
+  overflow: auto; */
+}
+.tabs-left {
+  top: 138px;
+  position: relative;
+  left: 109px;
+}
+
+.tabs-left .accordion-item {
+  /* width: 210px; */
+}
+
+/* .tabs { */
+  /* background: url('../img/sfondodoc.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  width:1200px;
+  height: 680px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+
+/* } */
+
+.flex.flex-row.tabs {
+  /* margin-top: 10%;
+  margin-left: 11%;
+  margin-right: 6%; */
+}
+
+
+div#accordionFlushExample {
+  /* position: absolute;
+  right: 70%; */
+  /* width: 330px; */
+  max-height: 429px;
+  overflow: overlay;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #031c1c
+;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff9966;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a15732;
+}
+
+
+div#tabs-tabContentVertical {
+  /* left: 38%;
+  right: 73px;
+  position: absolute;
+  overflow-y: scroll;
+  top: 20%;
+  bottom: 15%; */
+}
+
+
+ul#tabs-tabVertical {
+  width: 290px;
+}
+
+div.tab-content {
+  padding: 20px;
+  width: 644px;
+  position: fixed;
+  top: 130px;
+  max-height: 450px;
+  right: 100px;
+  overflow: auto;
+}
+
+button#button-scroll {
+  /* background-color: white !important; */
+  /* position: absolute; */
+  /* top: 582px; */
+  /* right: 76px; */
+}
