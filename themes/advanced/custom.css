@@ -2,243 +2,345 @@
 ************************* CUSTOM CSS FILE TO OVERLOAD LEGACY STYLES ***************************
 *********************************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "custom_css/pagina_forum.css";
+@import "custom_css/pagina_messaggi.css";
+@import "custom_css/pagina_presenti.css";
+@import "custom_css/pagina_chat.css";
+@import "custom_css/pagina_scheda.css";
+@import "custom_css/framecontentLeft.css";
+@import "custom_css/framecontentRight.css";
+
 
 body {
-  font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
-#framecontentLeft {
-  /* background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree.png"); */
-  background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree_border.png");
-  background-size: cover;
-  color: white;
+a {
+	text-decoration: none !important;
 }
 
-#framecontentRight {
-  /* background-image: url("../advanced/imgs/custom_imgs/rightbarworldtree.png"); */
-  background-image: url("../advanced/imgs/custom_imgs/leftbarworldtree_border.png");
-  background-size: cover;
-  color: white;
+input[type="submit"]:hover {
+	background-color: rgb(249, 250, 251);
+}
+
+input[type="submit"]:focus {
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+
+input[type="submit"]:focus-visible {
+	box-shadow: none;
 }
 
 #maincontent {
-  background: black;
-  color: white;
+	background: black;
+	color: white;
 }
 
 div.innertube {
-  vertical-align: top;
+	vertical-align: top;
 }
 
 .pagina_mappaclick .page_title {
-  display: none;
+	display: none;
 }
 
 .pagina_mappaclick {
-  background: url("imgs/custom_imgs/mainmap_BIG.png") no-repeat top center
-    #b9b9b9;
-  background-color: #020c0d !important;
+	background: url("imgs/custom_imgs/mainmap_BIG.png") no-repeat top center black;
+	background-color: #020c0d !important;
 
-  bottom: 0;
-  position: absolute;
-  top: 0;
-  right: 0px;
-  left: 0px;
-}
-div.output {
-  background: none;
-  border-radius: 0px;
-  border: 0px;
-  margin-top:0px;
-}
-
-div.menu {
- background-color: #ffffff00;
- border:none;
- border-radius:0px;
-}
-
-div.link_menu {
-  padding: 0 0 0 60px;
-}
-
-div.link_menu a:hover {
-  background-color: #ffffff00 !important;
-}
-
-div.link_menu img {
-  transition: transform .2s; /* Animation */
-  background-color: #000000ad;
-  border-radius: 80px;
-  padding: 4px;
-}
-
-div.link_menu img:hover {
-  transform: scale(1.2);
-}
-
-div.pagina_info_location,
-div.presenti {
-  border:none;
-  border-radius:0px;
-  background-color: #00000000;
+	bottom: 0;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	left: 0px;
 }
 
 div.output {
-  background-color: #020c0d;
-  border:none;
-  border-radius:0px;
+	background: none;
+	border-radius: 0px;
+	border: 0px;
+	margin-top: 0px;
 }
 
-div.box_messages,
-div.box_forums {
-  text-align: initial;
+div.output:has(div.pagina_uffici) {
+	background-image: url("../advanced/imgs/custom_imgs/sfondo_servizi.png");
+	/* background-size: contain; */
+	background-repeat: no-repeat;
+	background-color: #031011;
+	background-position: center;
 }
 
-div.documentazione {
-  margin: 5px auto;
-  padding: 10px;
-  width: 180px;
-  border: solid 1px #444;
-  -moz-border-radius: 5px; /* Bordi arrotondati */
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
+div.output:has(div.pagina_gestione) .link_menu {
+	padding: 0 0 10px 0;
+}
+
+div.output:has(div.pagina_gestione) a {
+	text-align: center;
+}
+
+div.output:has(div.pagina_uffici) a,
+div.output:has(div.pagina_gestione) a {
+	font-family: calibri;
+	font-size: 17px;
+	color: #d9aaa0;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+div.output:has(div.pagina_gestione) {
+	background-image: url("../advanced/imgs/custom_imgs/sfondo_menu_utente.png");
+	/* background-size: contain; */
+	background-repeat: no-repeat;
+	background-color: #031011;
+	background-position: center;
+}
+
+div.output:has(div.pagina_gestione) .page_body,
+div.output:has(div.pagina_uffici) .page_body {
+	position: absolute;
+	width: 280px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+div.output {
+	background-color: #020c0d;
+	border: none;
+	border-radius: 0px;
 }
 
 a,
 a:visited,
 div.box_messages a,
 div.pagina_presenti {
-  color: white !important;
+	color: white !important;
 }
 
-div.link_menu a:hover {
-  background-color: #5e7458;
-}
-
-div.link_menu a {
-  padding: 2px;
-}
-.luogo {
-  color: white !important;
+div.pagina_presenti h2,
+div.innertube h2,
+div.output h2,
+div.page_title h2 {
+	border-bottom: none
 }
 
 span.chat_msg {
-  color: white;
+	color: white;
 }
-div.pagina_scheda {
-  background: #00000087 !important;
-  border: 1px #646464 solid;
-  width: 757px;
-}
+
 div.background {
-  width: 757px;
-  padding: 0px 20px 0 20px;
+	width: 670px;
+	padding: 0px 20px 0 20px;
 }
 
-div.menu_scheda {
-  width: 757px;
-}
-/* @media only screen and (min-width: 600px) {
-  body {
-    zoom: 0.8;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  body {
-    zoom: 0.9;
-  }
-} */
 @media only screen and (max-width: 1300px) {
-  body.main_body {
-    zoom: 0.7 !important;
-  }
+	body.main_body {
+		zoom: 0.7;
+		/* -moz-transform: scale(0.7); */
+
+	}
 }
 
-table, td.casella_elemento, div.elementi_elenco, .link_back {
-  background-color: #ffffff00 !important;
+div.elementi_elenco {
+	height: auto !important;
+	font-size: 17px;
 }
 
-
-div.presenti iframe.iframe_presenti {
-  height: 300px;
-}
-
-.icon-lateral {
-  width: 30px;
-  transition: transform .2s; /* Animation */
-
-
-}
-
-.icon-lateral {
-  background-color: #000000ad;
-  border-radius: 80px;
-  padding: 4px;
-}
-
-.icon-lateral:hover {
-  transform: scale(1.2);
+div.titoli_elenco,
+span.titoli_elenco {
+	font-size: 17px;
 }
 
 
-
-div.documentazione,
-div.forums,
-div.messages {
-  background-color: #ffffff00;
-  border: none;
-  border-radius: 80px;
-  width: 73px;
-
+/* CSS */
+input[type=submit] {
+	background-color: #6d8972;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.15385;
+	margin: 0;
+	outline: none;
+	padding: 8px .8em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: baseline;
+	white-space: nowrap;
+	transition: 0.3s;
 }
-.documentazione iframe,
-.forums iframe,
-.messages iframe {
-  height: 60px;
-  width: 60px;
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+	background-color: #233f28;
+}
+
+input[type=submit]:focus {
+	box-shadow: 0 0 0 4px rgba(2, 19, 12, 0.15);
+}
+
+input[type=submit]:active {
+	background-color: #233f28;
+	box-shadow: none;
 }
 
 /* scroll bar *
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+	background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+	background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+	background: #555;
 }
-
 
 /* logout page */
 
 .logout_body {
-  background-image: url("../advanced/imgs/custom_imgs/EXIT_completa.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #031011;
-  background-position: center;
+	background-image: url("../advanced/imgs/custom_imgs/EXIT_completa.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #031011;
+	background-position: center;
 }
 
 
-.pagina_scheda {
-  background-image: url("../advanced/imgs/custom_imgs/scheda_sfondo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #031011;
-  background-position: center;
+/********************************************************/
+/* CALENDARIO */
+/********************************************************/
+
+.pagina_calendario {
+	background: #b9b9b91a !important;
+}
+
+.fc-theme-standard .fc-popover {
+	background: #000 !important;
+}
+
+.intestazione_eventi,
+.descrizione_eventi {
+	background: #184449 !important;
+}
+
+#dialog-calendario {
+	height: 449.821px !important;
+}
+
+/********************************************************/
+/* POPUP */
+/********************************************************/
+
+.popup {
+	background: #151e1f;
+}
+
+.popup .fc-toolbar-title,
+.popup .eventi {
+	color: white;
+}
+
+
+div.controllo_elenco input[type='image'],
+div.controllo_elenco img.iconimg {
+	width: 20px;
+	height: 20px;
+}
+
+td.forum_main_post_message,
+td.forum_other_post_message {
+	background-color: #0a0d088c;
+	border: 1px #00ffc524 solid;
+}
+
+.form_field textarea[name="messaggio"] {
+	background-color: #2e2e2e8c;
+	color: white;
+}
+
+
+.mappa {
+	color: #b0b8c9;
+	font-family: calibri;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.page_title h2 {
+	font-size: 20px !important;
+	font-weight: bolder;
+	padding-bottom: 4px;
+	margin-top: 0;
+	color: #b0b8c9;
+	font-family: calibri;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.form_submit input[type=submit] {
+  margin: 20px 0px 20px 0px;
+}
+
+input[type=text],
+textarea,
+select,
+input[name=causale],
+input[name=modifica_salute],
+input[name=new_name],
+input[name=message],
+input[name=tag],
+input[name=px],
+input[name=new_email],
+input[name=data],
+input[name=data_a],
+input[name=data_b]
+
+{
+	background-color: #1c271e;
+	border-radius: 12px;
+	border: 0;
+	box-sizing: border-box;
+	color: #eee;
+	height: 100%;
+	outline: 0;
+	padding: 5px 20px 5px;
+}
+
+div.form_field input.healt_input {
+	width: 70px;
+}
+
+select.day,
+select.month,
+select.year,
+select#dice,
+select#type,
+select[name=iniziale] {
+	width: 120px;
 }

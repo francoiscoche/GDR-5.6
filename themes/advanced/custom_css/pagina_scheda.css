@@ -1,0 +1,79 @@
+/********************************************************/
+/* PAGINA SCHEDA */
+/********************************************************/
+
+div.pagina_scheda {
+	width: auto;
+    min-height: 710px;
+}
+
+div.menu_scheda {
+	font-size: 17px;
+	text-align: end;
+	list-style: none;
+	height: 100%;
+}
+
+div.menu_scheda li {
+	list-style: none;
+}
+
+div.profilo {
+	margin: 5px 21px 20px 5px;
+	font-size: 15px;
+	width: 241px;
+}
+
+div.ritratto_nome,
+div.scheda-info {
+	float: right;
+	width: 275px;
+}
+
+div.pagina_scheda div.titolo_box {
+	display: none;
+}
+
+/* div.ritratto_avatar {
+	width: 271px !important;
+	padding-left: 81px;
+	height: 270px !important;
+} */
+div.ritratto {
+    position: relative;
+    top: 38px;
+    left: 102px;
+}
+
+div.ritratto div.ritratto_avatar {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+div.ritratto_avatar img {
+    max-width: none;
+    max-height: 320px;
+}
+
+.pagina_scheda {
+	background-image: url("../../advanced/imgs/custom_imgs/scheda_sfondo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #031011;
+	background-position: top;
+	border: 1px solid;
+}
+
+.pagina_scheda .page_title {
+	margin: 20px;
+}
+
+.menu_scheda a {
+	font-family: calibri;
+	font-size: 15px !important;
+	color: #7fffe7;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}

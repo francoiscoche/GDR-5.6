@@ -71,3 +71,57 @@ div.read_message_box_form input {
     height: 20px;
     width: 20px;
 }
+
+div.msggroup_container {
+    max-width: 80%;
+	margin: 0 auto;
+}
+div.msggroup_container .dsgroup{
+    text-align: center;
+	padding: 8px;
+    background-color: #a0a0a0;
+}
+div.msggroup_container .alredyRead {
+    font-weight: bold;
+    color: #333;
+	padding: 20px 0px 0px 0px;
+    margin: auto;
+    background-color: transparent;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #ddd;
+}
+div.msg_container {
+    width: auto;
+	min-width: 250px;
+    max-width: 90%;
+    clear: both;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: solid 1px #a7a6a6;
+    background-color: lightgray;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+div.msg_container.me {
+	float: right;
+	text-align: right;
+}
+div.msg_container.other, div.msg_container.fromsystem {
+	float: left;
+	text-align: left;
+}
+div.msg_container.system {
+    font-style: italic;
+    color: #444;
+	padding: 15px 5px;
+    margin: auto;
+    background-color: transparent;
+    border: transparent;
+}

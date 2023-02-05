@@ -1,0 +1,30 @@
+/********************************************************/
+/* PAGINA PRESENTI */
+/********************************************************/
+
+div.pagina_presenti_estesa ul.elenco_presenti li.mappa {
+	font-size: 19px;
+	margin: 30px;
+}
+
+div.pagina_presenti ul.elenco_presenti li.presente,
+div.pagina_presenti_estesa ul.elenco_presenti li.presente {
+	font-size: 17px;
+}
+
+div.pagina_presenti a,
+div.pagina_presenti a:visited,
+div.pagina_presenti_estesa a,
+div.pagina_presenti_estesa a:visited {
+	text-decoration: none;
+}
+
+img.presenti_ico_pagina {
+	width: 30px;
+	margin: 5px;
+}
+
+img.presenti_ico {
+	width: 11px;
+	height: 11px;
+}

@@ -1,0 +1,138 @@
+#framecontentLeft {
+	background-image: url("../../advanced/imgs/custom_imgs/rightbarworldtree_border.png");
+	background-size: cover;
+	color: white;
+}
+
+div.pagina_info_location,
+div.presenti {
+	border: none;
+	border-radius: 0px;
+	background-color: #00000000;
+}
+
+div.luogo {
+	font-size: 10px;
+	font-weight: normal;
+	margin: 10px 0px 0px;
+}
+
+div.box_info_luogo {
+	text-align: center;
+	margin: 22px;
+}
+
+.meteo_date,
+.meteo {
+	font-family: calibri;
+	font-size: 15px !important;
+	color: #b0b8c9;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bolder;
+}
+
+.info-luogo {
+	font-family: calibri;
+	font-size: 17px;
+	color: #d9aaa0;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+img.icon-lateral {
+	background-color: #000000ad;
+	border-radius: 80px;
+	padding: 4px;
+	width: 30px;
+	transition: transform .2s;
+}
+
+img.icon-presenti {
+	margin: 10px 0px 20px 36px;
+	background-color: #000000ad;
+	border-radius: 80px;
+	padding: 4px;
+	width: 30px;
+	transition: transform .2s;
+}
+
+.icon-lateral:hover,
+.icon_documentazione:hover,
+.icon-presenti:hover {
+	transform: scale(1.2);
+}
+
+.documentazione iframe,
+.forums iframe,
+.messages iframe,
+.presenti iframe {
+	height: 68px;
+	width: 65px;
+}
+
+div.box_messages,
+div.box_forums {
+	margin-top: 5px;
+}
+
+div.presenti {
+	margin-top: -15px;
+}
+
+div.documentazione,
+div.forums,
+div.messages {
+	background-color: #ffffff00;
+	border: none;
+	padding: 0px 0px 0px 58px;
+	text-align: initial;
+	margin-top: -10px;
+}
+
+div.documentazione {
+	margin-left: 12px;
+}
+
+.icon_documentazione {
+	background-color: #000000ad;
+	border-radius: 80px;
+	transition: transform .2s;
+	width: 38px;
+	padding: 4px;
+}
+
+div.presenti {
+	padding: 0px 0px 0px 10px;
+}
+
+div.elenco_presenti::-webkit-scrollbar {
+	width: 4px;
+}
+
+div.elenco_presenti::-webkit-scrollbar-track {
+	background: #020c0d;
+}
+
+div.elenco_presenti {
+	max-height: 100px;
+	overflow: overlay;
+}
+
+.page_title-presenti h2 {
+	font-size: 14px;
+}
+
+.page_title-presenti h2 {
+	font-weight: bolder;
+	padding-bottom: 4px;
+	margin-top: 0;
+	color: #b0b8c9;
+	font-family: calibri;
+	text-shadow: -3px 3px 3px rgb(184 70 170);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+}

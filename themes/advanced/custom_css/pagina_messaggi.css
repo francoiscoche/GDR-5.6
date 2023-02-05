@@ -1,0 +1,48 @@
+.msg_container .msg {
+	text-shadow: 5px 5px 3px #0e0d0d;
+}
+
+.msg_container .system {
+	border: none;
+}
+
+.msg_container.me {
+	background: #203120;
+}
+
+.msg_container.me b {
+	color: #FFFFFF;
+	background: #333333;
+	text-shadow: #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #03AE00 0px 0px 5px, #03AE00 0px 0px 40px, #03AE00 0px 0px 20px, #03AE00 0px 0px 5px, #03AE00 0px 0px 25px;
+	color: #FFFFFF;
+	background: #333333;
+}
+
+.msg_container.other b {
+	color: #FFFFFF;
+	background: #333333;
+	text-shadow: #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FF2D95 0px 0px 5px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 5px, #FF2D95 0px 0px 25px;
+	color: #FFFFFF;
+	background: #333333;
+}
+
+.msg_container.other {
+	background: #613b4cbd;
+}
+
+.alredyRead {
+	display: none;
+}
+
+div.msg_container {
+	color: #fff;
+	padding: 7px 15px;
+	border-radius: 20px;
+	min-width: 350px;
+	border: none;
+	margin-top: 15px;
+}
+
+.pagina_messages_center .form_messaggi div {
+  padding-bottom: 10px;
+}

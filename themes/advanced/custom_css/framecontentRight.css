@@ -1,0 +1,42 @@
+/* ***************************************************************** */
+/* MENU LATERAL DESTRA */
+/* ***************************************************************** */
+
+#framecontentRight {
+	background-image: url("../../advanced/imgs/custom_imgs/leftbarworldtree_border.png");
+	background-size: cover;
+	color: white;
+}
+
+div.menu {
+	background-color: #ffffff00;
+	border: none;
+	border-radius: 0px;
+}
+
+div.link_menu a {
+	padding: 0px;
+}
+
+div.link_menu {
+	padding: 0 0 20px 50px;
+}
+
+div.link_menu a:hover {
+	background-color: #ffffff00 !important;
+}
+
+div.link_menu img {
+	transition: transform .2s;
+	background-color: #000000ad;
+	border-radius: 80px;
+	padding: 4px;
+}
+
+div.link_menu a {
+	transition: transform .8s;
+}
+
+div.link_menu img:hover {
+	transform: scale(1.2);
+}

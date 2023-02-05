@@ -1,0 +1,59 @@
+.chat_avatar {
+	border-radius: 300px;
+	border-style: solid;
+	border: 2px solid #02514C;
+}
+
+div#pagina_chat {
+	font-family: 'Montserrat', sans-serif;
+}
+
+div#pagina_chat .chat_time,
+div#pagina_chat .chat_msg,
+div#pagina_chat .chat_name,
+div#pagina_chat .chat_tag
+{
+    font-size: 15px;
+}
+
+.chat_row_C {
+    border-color: #5b9c67 !important;
+    padding: 7px;
+    margin: 10px;
+}
+
+
+div.pagina_frame_chat div.panels_box {
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 150px 0px 0px 0px;
+}
+
+.chat_name a,
+.chat_name a:visited {
+	color: #C1D5D7 !important;
+}
+
+.chat_row_P .chat_time {
+	color: #04776F
+}
+
+.chat_row_P .chat_msg {
+	color: #058A81;
+}
+.chat_row_P .chat_tag {
+	color: white;
+}
+
+.chat_row_P .chat_msg .color2 {
+	color: #84AAAE;
+}
+
+.chat_row_S .chat_name {
+    color:white;
+}
+div.form_chat div.form_row {
+	clear: none;
+}
