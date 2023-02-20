@@ -74,8 +74,8 @@ gdrcd_query($result, 'free');
 
                         /*Registro l'evento (Passaggio di danaro)*/
                         gdrcd_query("INSERT INTO log (nome_interessato, autore, data_evento, codice_evento ,descrizione_evento) VALUES ('".gdrcd_filter('in', $_POST['beneficiario'])."', '".$_SESSION['login']."', NOW(), ".BONIFICO.", '".'('.gdrcd_filter('num', $_POST['ammontare']).' '.$PARAMETERS['names']['currency']['plur'].') '.gdrcd_filter('in', $_POST['causale'])."')");
-                        gdrcd_query("INSERT INTO messaggi (mittente, destinatario, spedito, testo) VALUES ('".$_SESSION['login']."','".gdrcd_capital_letter(gdrcd_filter('in', $_POST['beneficiario']))."', NOW(), '".gdrcd_filter('in', $_SESSION['login'].' '.$MESSAGE['interface']['bank']['notice'].' '.gdrcd_filter('num', $_POST['ammontare']).' '.$PARAMETERS['names']['currency']['plur']).'. \n\n'.gdrcd_filter('in', $_POST['causale'])."')");
-                    }
+                        gdrcd_sendSystemMsg(gdrcd_capital_letter(gdrcd_filter('in', $_POST['beneficiario'])), gdrcd_filter('in', $_SESSION['login'].' '.$MESSAGE['interface']['bank']['notice'].' '.gdrcd_filter('num', $_POST['ammontare']).' '.$PARAMETERS['names']['currency']['plur']).'. \n\n'.gdrcd_filter('in', $_POST['causale']));
+					}
                 }
             } ?>
             <div class="link_back">

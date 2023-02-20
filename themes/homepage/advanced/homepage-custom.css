@@ -24,12 +24,12 @@
     height: 26px;
     padding: 0 0 0 3px;
 
-    margin-right: 70px;
+    /* margin-right: 70px; */
     margin-left: 100px;
 }
 
 .login-table #username {
-    margin-top: 88px;
+    margin-top: 60px;
 }
 
 .login-table #password {
@@ -43,7 +43,7 @@
 }
 .div-form {
     width: 392px;
-    height: 395px;
+    /* height: 395px; */
     text-align: center;
 }
 
@@ -65,15 +65,16 @@ div.crediti {
     background-repeat: no-repeat;
 }
 div.box-documentazione {
-        margin-bottom: 50px;
+        /* margin-bottom: 50px; */
 }
 input[type=image].btn-submit{
-    width: 50px;
+    /* width: 50px; */
     height: 50px;
-    margin: 15px 0px 0px 50px;
+    /* margin: 15px 0px 0px 98px; */
     padding: 0;
 }
 div.box-iscrizione {
+    margin-left: 30px;
     /* background-image: url(img/login_ringraziamenti.png); */
     /* width: 220px; */
     /* height: 50px; */
@@ -110,6 +111,9 @@ span#iscrizione {
     margin: 20px 0px 10px 0px;
 }
 
+.pagina_iscrizione div.form_field table {
+    margin: 0 auto;
+}
 /* .pagina_iscrizione .page_body div.form_submit{
     margin: 10px 0px 0px 0px;
 } */
@@ -136,4 +140,37 @@ select[name=car4],
 select[name=car5]
 {
     width: 120px;
+}
+
+div.pagina_iscrizione div.elementi_elenco,
+div.pagina_iscrizione td.casella_elemento {
+    background-color: #ffffff00;
+    font-size: 15px;
+}
+div.pagina_iscrizione table {
+    margin: 0 auto;
+}
+
+div.pagina_iscrizione .form_gioco {
+    text-align: center;
+}
+
+div.side_modules.reset_password {
+    background-color: #b9b9b900;
+}
+
+div.side_modules input#passrecovery {
+    width: 170px;
+    margin-left: 156px;
+    margin-bottom: 0px;
+}
+
+div.pass_rec {
+    margin-top: 10px;
+}
+
+div.pass_rec input.btn-invia-passwd {
+    width: 188px;
+    height: 44px;
+    margin-left: 78px;
 }

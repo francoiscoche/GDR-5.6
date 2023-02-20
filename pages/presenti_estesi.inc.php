@@ -69,11 +69,11 @@
              * @author Blancks
              */
             $online_state = '';
-            if ($PARAMETERS['mode']['user_online_state'] == 'ON' && ! empty($record['online_status']) && $record['online_status'] != null) {
-                $record['online_status'] = trim(nl2br(gdrcd_filter('in', $record['online_status'])));
-                $record['online_status'] = strtr($record['online_status'], ["\n\r" => '', "\n" => '', "\r" => '', '"' => '&quot;']);
-                $online_state = 'onmouseover="show_desc(event, \''.$record['online_status'].'\');" onmouseout="hide_desc();""';
-            }
+            // if ($PARAMETERS['mode']['user_online_state'] == 'ON' && ! empty($record['online_status']) && $record['online_status'] != null) {
+            //     $record['online_status'] = trim(nl2br(gdrcd_filter('in', $record['online_status'])));
+            //     $record['online_status'] = strtr($record['online_status'], ["\n\r" => '', "\n" => '', "\r" => '', '"' => '&quot;']);
+            //     $online_state = 'onmouseover="show_desc(event, \''.$record['online_status'].'\');" onmouseout="hide_desc();""';
+            // }
             //Stampo il PG
             echo '<li class="presente"'.$online_state.'>';
             //Entrata, uscita PG
@@ -85,12 +85,12 @@
             //Se e' loggato da meno di 2 minuti
             if ($activity <= 2)   {
                 //Lo segnalo come appena entrato
-                echo '<img class="presenti_ico" src="imgs/icons/enter.gif" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['enter']).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['enter']).'" />';
+                echo '<img class="presenti_ico" src="imgs/icons/enter.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['enter']).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['enter']).'" />';
             } else  {
                  //Altrimenti e' semplicemente loggato
                     echo '<img class="presenti_ico" src="imgs/icons/blank.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['logged']).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['logged']).'" />';
                 }//else
-             
+
             switch ($record['permessi']) {
                 case USER:
                     $alt_permessi = '';
@@ -104,35 +104,49 @@
                 case MODERATOR:
                     $alt_permessi = $PARAMETERS['names']['moderators']['sing'];
                     break;
+                case ADMINISTRATOR:
+                    $alt_permessi = $PARAMETERS['names']['fake_mod']['sing'];
+                    break;
                 case SUPERUSER:
                     $alt_permessi = $PARAMETERS['names']['administrator']['sing'];
                     break;
             }//else
             //Livello di accesso del PG (utente, master, admin, superuser)
-            echo '<img class="presenti_ico" src="imgs/icons/permessi'.$record['permessi'].'.gif" alt="'.gdrcd_filter('out', $alt_permessi).'" title="'.gdrcd_filter('out', $alt_permessi).'" />';
+            echo '<img class="presenti_ico_pagina" src="imgs/icons/permessi'.$record['permessi'].'.png" alt="'.gdrcd_filter('out', $alt_permessi).'" title="'.gdrcd_filter('out', $alt_permessi).'" />';
 
             //Icona stato di disponibilità. E' sensibile se la riga che sto stampando corrisponde all'utente loggato.
             $change_disp = ($record['disponibile'] + 1) % 3;
-            echo '<img class="presenti_ico" src="imgs/icons/disponibile'.$record['disponibile'].'.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['availability'][$record['disponibile']]).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['availability'][$record['disponibile']]).'" />';
+            echo '<img class="presenti_ico_pagina" src="imgs/icons/disponibile'.$record['disponibile'].'.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['availability'][$record['disponibile']]).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['availability'][$record['disponibile']]).'" />';
 
             //Icona della razza pg
             if ($record['icon'] == '') {
                 $record['icon'] = 'standard_razza.png';
             }
-            echo '<img class="presenti_ico" src="themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/races/'.$record['icon'].'" alt="'.gdrcd_filter('out', $record['sing_'.$record['sesso']]).'" title="'.gdrcd_filter('out', $record['sing_'.$record['sesso']]).'" />';
+            echo '<img class="presenti_ico_pagina" src="themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/races/'.$record['icon'].'" alt="'.gdrcd_filter('out', $record['sing_'.$record['sesso']]).'" title="'.gdrcd_filter('out', $record['sing_'.$record['sesso']]).'" />';
 
             //Icona del genere del pg
-            echo '<img class="presenti_ico" src="imgs/icons/testamini'.$record['sesso'].'.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['gender'][$record['sesso']]).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['gender'][$record['sesso']]).'" />';
+            echo '<img class="presenti_ico_pagina" src="imgs/icons/testamini'.$record['sesso'].'.png" alt="'.gdrcd_filter('out', $MESSAGE['status_pg']['gender'][$record['sesso']]).'" title="'.gdrcd_filter('out', $MESSAGE['status_pg']['gender'][$record['sesso']]).'" />';
 
             //Nome pg e link alla sua scheda
-            echo '<a href="main.php?page=messages_center&op=create&destinatario='.gdrcd_filter('url', $record['nome']).'" class="link_sheet">MP</a> ';
+            echo '<a href="main.php?page=messages_center&op=create&destinatario='.gdrcd_filter('url', $record['nome']).'" class="link_sheet"><img src="imgs/icons/mail_new.png" class="presenti_ico_pagina"></a> ';
 
             //Nome pg e link alla sua scheda
-            echo ' <a href="main.php?page=scheda&pg='.$record['nome'].'" class="link_sheet gender_'.$record['sesso'].'">'.gdrcd_filter('out', $record['nome']);
-            if (empty($record['cognome']) === false) {
-                echo ' '.gdrcd_filter('out', $record['cognome']);
+            // echo ' <a data-toggle="tooltip" data-placement="top" title="'. $record['online_status'].'" href="main.php?page=scheda&pg='.$record['nome'].'" class="link_sheet gender_'.$record['sesso'].'">'.gdrcd_filter('out', $record['nome']);
+
+            if ($record['online_status']) {
+                echo ' <a class="tooltiplink" href="main.php?page=scheda&pg='.$record['nome'].'" class="link_sheet gender_'.$record['sesso'].'">'.gdrcd_filter('out', $record['nome']);
+                if (empty($record['cognome']) === false) {
+                    echo ' '.gdrcd_filter('out', $record['cognome']);
+                }
+                echo '<span class="tooltiptext">'. $record['online_status'] .'</span></a> ';
+            } else {
+                echo ' <a href="main.php?page=scheda&pg='.$record['nome'].'" class="link_sheet gender_'.$record['sesso'].'">'.gdrcd_filter('out', $record['nome']);
+                if (empty($record['cognome']) === false) {
+                    echo ' '.gdrcd_filter('out', $record['cognome']);
+                }
+                echo '</a> ';
             }
-            echo '</a> ';
+
             echo '</li>';
         }//while
         echo '</ul>';
@@ -140,4 +154,3 @@
     </div>
 </div>
 <!-- Chiusura finestra del gioco -->
-

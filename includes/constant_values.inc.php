@@ -3,8 +3,9 @@
 /*Livelli di accesso utente*/
 define('DELETED', -1);
 define('USER', 0);
-define('SUPERUSER', 4);
+define('SUPERUSER', 5);
 define('MODERATOR', 3);
+define('ADMINISTRATOR', 4);
 define('GAMEMASTER', 2);
 define('GUILDMODERATOR', 1);
 
@@ -128,3 +129,14 @@ CONST PG_CONTACT_ENABLED = true;
 
 //definisce quali permessi possono modificare i contatti del pg  (default: gamemaster)
 const PERMESSI_CONOSCENZE = MODERATOR;
+
+//Attiva o disattiva il pacchetto intero (default: true)
+const CALENDAR = true;
+//Attiva o disattiva la versione popup del calendario (default: true)
+const CALENDAR_POPUP = true;
+//Attiva o disattiva il calendario personale (default: true)
+const CALENDAR_PERSONAL = true;
+//Attiva o disattiva la visibilità del calendario personale altrui (default: true)
+const CALENDAR_PERSONAL_PUBLIC = false;
+//Attiva o disattiva la visualizzazione sul calendario globale dei propri eventi personali
+const CALENDAR_PERSONAL_GLOBAL = false;

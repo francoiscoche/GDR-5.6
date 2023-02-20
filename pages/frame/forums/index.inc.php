@@ -79,7 +79,7 @@ if($PARAMETERS['mode']['check_forum'] === 'ON') {
         }
 
         // Preparo il modulo
-        $linkForum = '<a href="../../../main.php?page=forum" target="_top">'.$textForum.'</a>';
+        $linkForum = '<a href="../../../main.php?page=forum" target="_top"><img class="icon-lateral" src="../../../themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/custom_imgs/icons/BACHECHE.png'.'"/></a>';
         $cntForumFrame = '<div class="messaggio_forum">'.$linkForum.'</div>';
     }
     // NUOVI TOPIC
@@ -95,7 +95,8 @@ if($PARAMETERS['mode']['check_forum'] === 'ON') {
         }
 
         // Preparo il modulo
-        $linkForum = '<a href="../../../main.php?page=forum" target="_top">'.$textForum.'</a>';
+        $linkForum = '<a href="../../../main.php?page=forum" target="_top"><img class="icon-lateral" src="../../../themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/custom_imgs/icons/BACHECHE_NEW.png'.'"/></a>';
+        // $linkForum = '<a href="../../../main.php?page=forum" target="_top">'.$textForum.'</a>';
         $cntForumFrame = '<div class="messaggio_forum_nuovo">'.$linkForum.'</div>';
     }
 }

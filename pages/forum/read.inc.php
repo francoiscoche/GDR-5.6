@@ -1,5 +1,5 @@
 <?php
-$result = gdrcd_query("SELECT messaggioaraldo.id_messaggio, messaggioaraldo.id_messaggio_padre, messaggioaraldo.titolo, messaggioaraldo.messaggio, messaggioaraldo.autore, messaggioaraldo.data_messaggio, messaggioaraldo.chiuso, araldo.tipo, araldo.nome, araldo.proprietari, personaggio.url_img, araldo.id_araldo FROM messaggioaraldo LEFT JOIN araldo ON messaggioaraldo.id_araldo = araldo.id_araldo LEFT JOIN personaggio ON messaggioaraldo.autore = personaggio.nome WHERE (messaggioaraldo.id_messaggio_padre = ".gdrcd_filter('num', $_REQUEST['what'])." AND messaggioaraldo.id_messaggio_padre != -1) OR messaggioaraldo.id_messaggio = ".gdrcd_filter('num', $_REQUEST['what'])." ORDER BY id_messaggio_padre, data_messaggio", 'result');
+$result = gdrcd_query("SELECT messaggioaraldo.id_messaggio, messaggioaraldo.id_messaggio_padre, messaggioaraldo.titolo, messaggioaraldo.messaggio, messaggioaraldo.autore, messaggioaraldo.data_messaggio, messaggioaraldo.chiuso, araldo.tipo, araldo.nome, araldo.proprietari, personaggio.url_img_chat, araldo.id_araldo FROM messaggioaraldo LEFT JOIN araldo ON messaggioaraldo.id_araldo = araldo.id_araldo LEFT JOIN personaggio ON messaggioaraldo.autore = personaggio.nome WHERE (messaggioaraldo.id_messaggio_padre = ".gdrcd_filter('num', $_REQUEST['what'])." AND messaggioaraldo.id_messaggio_padre != -1) OR messaggioaraldo.id_messaggio = ".gdrcd_filter('num', $_REQUEST['what'])." ORDER BY id_messaggio_padre, data_messaggio", 'result');
 $row = gdrcd_query($result, 'fetch');
 if( ! empty($row)) {
     $araldo = (int) $row['id_araldo'];
@@ -39,8 +39,13 @@ if( ! empty($row)) {
                             </a>
 
                             <div class="forum_avatar">
-                                <img src="<?php echo gdrcd_filter('out', $row['url_img']); ?>"
-                                     class="img_forum_avatar">
+                                <!-- <img src="<?php echo gdrcd_filter('out', $row['url_img_chat']); ?>"
+                                     class="img_forum_avatar"> -->
+                                <?php if (empty($row['url_img_chat']) || $row['url_img_chat'] == " ") { ?>
+                                    <img src="imgs/avatars/sigla.png" class="img_forum_avatar" />
+                                <?php } else { ?>
+                                    <img src="<?php echo gdrcd_filter('out', $row['url_img_chat']); ?>" class="img_forum_avatar"/>
+                                <?php } ?>
                             </div>
                             <div class="forum_date_small">
                                 <?php echo gdrcd_format_date($row['data_messaggio']).' '.gdrcd_format_time($row['data_messaggio']); ?>
@@ -89,7 +94,12 @@ if( ! empty($row)) {
                                     <?php echo gdrcd_filter('out', $row['autore']); ?>
                                 </a>
                                 <div class="forum_avatar">
-                                    <img src="<?php echo gdrcd_filter('out', $row['url_img']); ?>" class="img_forum_avatar">
+                                    <!-- <img src="<?php echo gdrcd_filter('out', $row['url_img_chat']); ?>" class="img_forum_avatar"> -->
+                                    <?php if (empty($row['url_img_chat']) || $row['url_img_chat'] == " ") { ?>
+                                        <img src="imgs/avatars/sigla.png" class="img_forum_avatar" />
+                                    <?php } else { ?>
+                                        <img src="<?php echo gdrcd_filter('out', $row['url_img_chat']); ?>" class="img_forum_avatar"/>
+                                    <?php } ?>
                                 </div>
                                 <div class="forum_date_small">
                                     <?php echo gdrcd_format_date($row['data_messaggio']).' '.gdrcd_format_time($row['data_messaggio']); ?>

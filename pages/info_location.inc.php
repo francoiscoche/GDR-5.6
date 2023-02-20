@@ -52,9 +52,9 @@
         $nome_luogo = $record['nome'];
     }
     ?>
-    <div class="page_title">
+    <!-- <div class="page_title">
         <h2><?php echo gdrcd_filter('out', $nome_luogo); ?></h2>
-    </div>
+    </div> -->
     <div class="page_body">
         <?php
         if ($record_exists > 0 || $_SESSION['luogo'] == -1) {
@@ -82,10 +82,16 @@
                      title="<?php echo gdrcd_filter('out', $record['descrizione']); ?>">
             </div>
             <?php if ((isset($record['stato']) === true) || (isset($record['descrizione']) === true)) {
-                echo '<div class="box_stato_luogo"><marquee onmouseover="this.stop()" onmouseout="this.start()" direction="left" scrollamount="3" class="stato_luogo">&nbsp;' . $MESSAGE['interface']['maps']['Status'] . ': ' . gdrcd_filter('out', $record['stato']) . ' -  ' . gdrcd_filter('out', $record['descrizione']) . '</marquee></div>';
+                // echo '<div class="box_stato_luogo"><marquee onmouseover="this.stop()" onmouseout="this.start()" direction="left" scrollamount="3" class="stato_luogo">&nbsp;' . $MESSAGE['interface']['maps']['Status'] . ': ' . gdrcd_filter('out', $record['stato']) . ' -  ' . gdrcd_filter('out', $record['descrizione']) . '</marquee></div>';
+
+
+                echo '<div class="box_info_luogo"><a data-toggle="tooltip" data-placement="right" title="Tooltip on right" href="" onclick="window.open(\'pages/frame/luogo/luogo.inc.php?descrizione=' . $record['descrizione'] . '&stato=' . $record['stato'] .'\',\'newwindow\', \'width=520,height=310\'); return false;"><span class="info-luogo">Info luogo</span></a></div>';
+                // echo "COUCOU";
+
             } else {
                 echo '<div class="box_stato_luogo">&nbsp;</div>';
             }
+
             if ($PARAMETERS['mode']['auto_meteo'] == 'ON') {
                 /* Meteo */
                 $ore = strftime("%H");
@@ -176,18 +182,18 @@
                 $meteo = gdrcd_filter('out', $record['meteo']);
             }
             if (empty($meteo) === false) { ?>
-                <div class="page_title">
+                <!-- <div class="page_title">
                     <h2><?php echo gdrcd_filter('out', $MESSAGE['interface']['meteo']['title']); ?></h2>
-                </div>
+                </div> -->
                 <div class="meteo_date">
                     <?php echo strftime('%d') . '/' . strftime('%m') . '/' . (strftime('%Y') + $PARAMETERS['date']['offset']); ?>
                 </div>
-                <div class="meteo_luna">
+                <!-- <div class="meteo_luna">
                     <?php if (defined('MOON') and MOON) {
                         $moon = gdrcd_lunar_phase();
                         echo '<img title="' . $moon['title'] . '"  src="themes/' . gdrcd_filter('out', $PARAMETERS['themes']['current_theme']) . '/imgs/luna/' . $moon['phase'] . '.png">';
                     } ?>
-                </div>
+                </div> -->
 
                 <div class="meteo">
                     <?php

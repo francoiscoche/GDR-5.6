@@ -14,9 +14,9 @@ if (($pg == $me) || ($permessi >= GUILDMODERATOR)) { ?>
     <a href="main.php?page=scheda_descrizione&pg=<?=$pg;?>">
         <?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['detail']); ?>
     </a>
-    <a href="main.php?page=scheda_storia&pg=<?=$pg;?>">
+    <!-- <a href="main.php?page=scheda_storia&pg=<?=$pg;?>">
         <?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['background']); ?>
-    </a>
+    </a> -->
     <!-- TRASFERIMENTI -->
     <a href="main.php?page=scheda_trans&pg=<?=$pg;?>">
         <?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['transictions']); ?>
@@ -28,14 +28,14 @@ if (($pg == $me) || ($permessi >= GUILDMODERATOR)) { ?>
     </a>
 
     <!-- OGGETTI -->
-    <a href="main.php?page=scheda_oggetti&pg=<?=$pg;?>">
+    <!-- <a href="main.php?page=scheda_oggetti&pg=<?=$pg;?>">
         <?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['inventory']); ?>
-    </a>
+    </a> -->
 
     <!-- INVENTARIO -->
-    <a href="main.php?page=scheda_equip&pg=<?=$pg;?>">
+    <!-- <a href="main.php?page=scheda_equip&pg=<?=$pg;?>">
         <?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['equipment']); ?>
-    </a>
+    </a> -->
 
     <!-- DIARIO -->
 <?php if (defined('PG_DIARY_ENABLED') and PG_DIARY_ENABLED) { ?>

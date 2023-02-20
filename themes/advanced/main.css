@@ -175,7 +175,7 @@ div.meteo_luna img{
     display: block;
 }
 
-/** * Frame Messaggi 
+/** * Frame Messaggi
 */
 iframe.iframe_messages,
 iframe.iframe_forums {
@@ -243,7 +243,7 @@ div.link_menu a.sprite:hover {
 
 /** * Mappa cliccabile */
 
-/** * Posizionamento mappa cliccabile 
+/** * Posizionamento mappa cliccabile
 */
 div.mappaclick_map {
     margin: 20px auto;
@@ -255,7 +255,7 @@ div.mappaclick_map a {
     font-weight: bolder;
 }
 
-/** * stile della tooltip di descrizione sulla mappa 
+/** * stile della tooltip di descrizione sulla mappa
 */
 div#descriptionLoc {
     position: absolute;
@@ -391,7 +391,7 @@ div.elenco_record_gestione table {
 
 /** * Accorgimenti Layout */
 
-/** * Allineamento verticale delle colonne 
+/** * Allineamento verticale delle colonne
 */
 #framecontentLeft, #framecontentRight {
     display: table;

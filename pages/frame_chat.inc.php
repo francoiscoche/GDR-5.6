@@ -67,7 +67,7 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                                     } ?>
 	                            </span>
                             </div>
-                            <div class="casella_chat">
+                            <div class="casella_chat message">
                                 <input name="message" id="message" value="" />
                                 <br /><span class="casella_info">
 	                                    <?php echo gdrcd_filter('out', $MESSAGE['chat']['tag']['info']['msg']); ?>
@@ -85,6 +85,17 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                                     </a>
                                 <?php  } ?>
                             </div>
+                            <!-- Poteri Abilità Oggetti -->
+                            <div class="casella_chat">
+                                <input name="tag_poteri" id="tag_poteri" value="" />
+                                <br /><span class="casella_info">
+                                    <?php echo gdrcd_filter('out',
+                                        $MESSAGE['chat']['tag']['info']['poteri']."/".
+                                        $MESSAGE['chat']['tag']['info']['abilita']."/".
+                                        $MESSAGE['chat']['tag']['info']['oggetti']
+                                    ) ?>
+	                            </span>
+                            </div>
                             <div class="casella_chat">
                                 <input type="submit" value="<?php echo gdrcd_filter('out', $MESSAGE['interface']['forms']['submit']); ?>" />
                                 <input type="hidden" name="op" value="new_chat_message" />
@@ -96,7 +107,7 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                         <div class="form_row">
                             <form action="pages/chat.inc.php?ref=30&chat=yes" method="post" target="chat_frame" id="chat_form_actions">
                                 <?php if($PARAMETERS['mode']['skillsystem'] == 'ON') { ?>
-                                    <div class="casella_chat">
+                                    <!-- <div class="casella_chat">
                                         <?php $result = gdrcd_query("SELECT id_abilita, nome FROM abilita WHERE id_razza=-1 OR id_razza IN (SELECT id_razza FROM personaggio WHERE nome = '".$_SESSION['login']."') ORDER BY nome", 'result'); ?>
                                         <select name="id_ab" id="id_ab">
                                             <option value="no_skill"></option>
@@ -109,7 +120,7 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                                             ?>
                                         </select>
                                         <br /><span class="casella_info"><?php echo gdrcd_filter('out', $MESSAGE['chat']['commands']['skills']); ?></span>
-                                    </div>
+                                    </div> -->
                                     <div class="casella_chat">
                                         <select name="id_stats" id="id_stats">
                                             <option value="no_stats"></option>
@@ -155,7 +166,7 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                                     echo '<input type="hidden" name="dice" id="dice" value="no_dice">';
                                 }
                                 if($PARAMETERS['mode']['skillsystem'] == 'ON') { ?>
-                                    <div class="casella_chat">
+                                    <!-- <div class="casella_chat">
                                         <?php
                                         $result = gdrcd_query("SELECT clgpersonaggiooggetto.id_oggetto, oggetto.nome, clgpersonaggiooggetto.cariche FROM clgpersonaggiooggetto JOIN oggetto ON clgpersonaggiooggetto.id_oggetto = oggetto.id_oggetto WHERE clgpersonaggiooggetto.nome = '".$_SESSION['login']."' AND posizione > 0 ORDER BY oggetto.nome", 'result'); ?>
                                         <select name="id_item" id="id_item">
@@ -170,11 +181,24 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
                                             ?>
                                         </select>
                                         <br /><span class="casella_info"><?php echo gdrcd_filter('out', $MESSAGE['chat']['commands']['item']); ?></span>
-                                    </div>
+                                    </div> -->
                                 <?php
                                 } else {
-                                    echo '<input type="hidden" name="id_item" id="id_item" value="no_item">';
+                                    // echo '<input type="hidden" name="id_item" id="id_item" value="no_item">';
                                 } ?>
+                                <div class="casella_chat">
+                                        <select name="bonus_malus" id="bonus_malus">
+                                            <option value="no_dice"></option>
+                                            <?php
+                                                foreach($PARAMETERS['settings']['bonus_malus'] as $bonus_malus_name => $bonus_malus_value) { ?>
+                                                    <option
+                                                            value="<?php echo $bonus_malus_value; ?>"><?php echo $bonus_malus_name; ?></option>
+                                                    <?php
+                                                }
+                                            ?>
+                                        </select>
+                                        <br /><span class="casella_info">Bonus/Malus</span>
+                                    </div>
                                 <div class="casella_chat">
                                     <input type="submit" value="<?php echo gdrcd_filter('out', $MESSAGE['interface']['forms']['submit']); ?>" />
                                     <input type="hidden" name="op" value="take_action">
@@ -188,4 +212,3 @@ $info = gdrcd_query("SELECT nome, stanza_apparente, invitati, privata, proprieta
     </div>
     <!-- Page-Body -->
 </div><!-- Pagina -->
-

@@ -15,10 +15,10 @@ $i_ref_time = gdrcd_filter_get($_GET['ref']);
 if($PARAMETERS['mode']['check_messages'] === 'ON') {
 
     /**
-     * Controllo se rispetto all'ultimo messaggio visualizzato dall'utente ne sono stati inviati altri
-     */
-    $messaggi_non_letti = gdrcd_query("SELECT id FROM messaggi WHERE destinatario = '".gdrcd_filter('in', $_SESSION['login'])."' AND destinatario_del = 0 AND letto = 0", 'result');
-    $cntNewMessage = gdrcd_query($messaggi_non_letti, 'num_rows');
+    * Controllo presenza di gruppi con nuovi messaggi non letti
+    */
+    $messaggi_non_letti = gdrcd_query("SELECT max(idmsg), dtsend, msg.idgroup FROM msggrpuser JOIN msg on msggrpuser.idgroup=msg.idgroup WHERE nome='".gdrcd_filter('in', $_SESSION['login'])."' and msggrpuser.dtstart<=NOW() and msggrpuser.dtend > NOW() and msg.dtsend > msggrpuser.dtlastread and msg.dtsend>msggrpuser.dtdel group by msg.idgroup;", 'result');
+	$cntNewMessage = gdrcd_query($messaggi_non_letti, 'num_rows');
     $hasNewMessage = ($cntNewMessage > 0);
     gdrcd_query($messaggi_non_letti, 'free');
 
@@ -70,7 +70,8 @@ if($PARAMETERS['mode']['check_messages'] === 'ON') {
         }
 
         // Preparo il modulo
-        $linkMessages = '<a href="../../../main.php?page=messages_center&offset=0" target="_top">'.$textMessages.'</a>';
+        // $linkMessages = "<a href=\"javascript:parent.modalWindow('test', '', 'popup.php?page=messages_center&offset=0');\">dsds</a>";
+        $linkMessages = '<a href="../../../main.php?page=messages_center&offset=0" target="_top"><img class="icon-lateral" src="../../../themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/custom_imgs/icons/MESSAGGI.png'.'"/></a>';
         $cntMessagesFrame = '<div class="messaggio_forum">'.$linkMessages.'</div>';
 
         // Forzo lo stop della notifica sul title se previsto
@@ -90,7 +91,7 @@ if($PARAMETERS['mode']['check_messages'] === 'ON') {
         }
 
         // Preparo il modulo
-        $linkMessages = '<a href="../../../main.php?page=messages_center&offset=0" target="_top">'.$textMessages.'</a>';
+        $linkMessages = '<a href="../../../main.php?page=messages_center&offset=0" target="_top"><img class="icon-lateral" src="../../../themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/custom_imgs/icons/MESSAGGI_NEW.png'.'"/></a>';
         $cntMessagesFrame = '<div class="messaggio_forum_nuovo">'.$linkMessages.'</div>';
 
         // Avvio notifica sul title

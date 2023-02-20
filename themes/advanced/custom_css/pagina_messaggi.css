@@ -1,5 +1,5 @@
 .msg_container .msg {
-	text-shadow: 5px 5px 3px #0e0d0d;
+	/* text-shadow: 5px 5px 3px #0e0d0d; */
 }
 
 .msg_container .system {
@@ -18,7 +18,8 @@
 	background: #333333;
 }
 
-.msg_container.other b {
+.msg_container.other b,
+.msg_container.fromsystem b {
 	color: #FFFFFF;
 	background: #333333;
 	text-shadow: #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FFF 0px 0px 1px, #FF2D95 0px 0px 5px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 5px, #FF2D95 0px 0px 25px;
@@ -26,7 +27,8 @@
 	background: #333333;
 }
 
-.msg_container.other {
+.msg_container.other,
+.msg_container.fromsystem {
 	background: #613b4cbd;
 }
 
@@ -41,6 +43,10 @@ div.msg_container {
 	min-width: 350px;
 	border: none;
 	margin-top: 15px;
+}
+
+div.msggroup_container .dsgroup {
+	background-color: #1f1f1f;
 }
 
 .pagina_messages_center .form_messaggi div {

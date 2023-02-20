@@ -6,6 +6,8 @@
 
 div#pagina_chat {
 	font-family: 'Montserrat', sans-serif;
+	bottom: 205px;
+	padding: 10px;
 }
 
 div#pagina_chat .chat_time,
@@ -28,32 +30,115 @@ div.pagina_frame_chat div.panels_box {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 150px 0px 0px 0px;
+	/* margin: 150px 0px 0px 0px; */
 }
 
 .chat_name a,
-.chat_name a:visited {
-	color: #C1D5D7 !important;
+.chat_name a:visited,
+.chat_row_N .chat_name {
+	color: #7a9da0 !important;
 }
 
-.chat_row_P .chat_time {
-	color: #04776F
+.chat_row_C {
+	margin: 0;
+	padding: 0;
+}
+.chat_row_D,
+.chat_row_C {
+	border: none !important;
 }
 
-.chat_row_P .chat_msg {
+
+.chat_row_C .chat_msg,
+.chat_row_D .chat_msg{
+	color:#6bad80;
+}
+
+.chat_row_P,
+.chat_row_S,
+.chat_row_A {
+    text-align: justify;
+}
+
+div#pagina_chat .chat_time {
+	color: #07716c
+}
+
+.chat_row_P .chat_msg,
+.chat_row_N .chat_msg {
 	color: #058A81;
 }
 .chat_row_P .chat_tag {
-	color: white;
+	color: rgb(175, 175, 175);
 }
-
+.chat_row_N .chat_msg .color2,
 .chat_row_P .chat_msg .color2 {
 	color: #84AAAE;
 }
 
-.chat_row_S .chat_name {
-    color:white;
-}
 div.form_chat div.form_row {
 	clear: none;
+}
+div.chat_row_S .chat_name,
+div.chat_row_S .chat_msg{
+	color: #c39eff;
+	font-size: 13px !important;
+}
+
+/* OFF */
+div.chat_row_A .chat_msg,
+div.chat_row_A .chat_tag {
+	color: #7e7798;
+	font-size: 14px !important;
+}
+
+
+/* MASTER */
+div.chat_row_M {
+	border-width: 1px;
+	background-color: rgb(4, 21, 28);
+    border-color: rgba(105, 129, 251, 0);
+    text-align: justify;
+	color:rgb(105, 129, 251);
+	padding: 10px;
+	margin: 10px 0px 10px 0px;
+}
+
+.casella_chat input[name="tag_poteri"] {
+	/* padding: 0; */
+}
+
+.casella_chat select[name=bonus_malus],
+.casella_chat select[name=id_stats] {
+	margin-right: 10px;
+
+}
+
+.casella_chat select[name="bonus_malus"],
+.casella_chat input[name=tag] {
+	width: 115px !important;
+	margin-left: 10px;
+}
+
+.casella_chat select[name=dice],
+.casella_chat select[name=bonus_malus]
+ {
+	width: 100px;
+}
+
+.casella_chat select[name=type],
+.casella_chat select[name=id_stats]
+{
+	width: 150px;
+}
+
+div.form_chat div.form_row {
+    clear: both;
+}
+
+
+.casella_chat.message {
+    text-align: left;
+	padding-left: 10px;
+	width: 370px;
 }

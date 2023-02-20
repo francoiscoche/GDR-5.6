@@ -45,9 +45,9 @@ $PARAMETERS['database']['url'] = 'localhost';        //indirizzo ip del database
 /* HELP: Sostituire le diciture inserite tra le virgolette con i parametri di connessione al Database del proprio dominio. Essi sono forniti al momento della registrazione. Se non si e' in possesso di tali parametri consultare le FAQ della homepage dell'host che fornisce il dominio. Se non le si trovano li contattare lo staff dell'host. */
 
 /* INFORMAZIONI SUL SITO */
-$PARAMETERS['info']['site_name'] = 'GDRCD 5.6.0.5'; //nome del gioco
-$PARAMETERS['info']['site_url'] = 'http://gdrcd.test/'; //indirizzo URL del gioco
-$PARAMETERS['info']['webmaster_name'] = 'Webmaster'; //nome e cognome del responsabile del sito
+$PARAMETERS['info']['site_name'] = 'World Tree GDR'; //nome del gioco
+$PARAMETERS['info']['site_url'] = 'http://localhost/gdr/'; //indirizzo URL del gioco
+$PARAMETERS['info']['webmaster_name'] = 'La Gestione'; //nome e cognome del responsabile del sito
 $PARAMETERS['info']['webmaster_email'] = 'webmaster@gdrhost.it'; //email ufficiale del webmaster (è visibile in homepage)
 $PARAMETERS['info']['homepage_name'] = 'Homepage'; //nome con il quale si indica la prima pagina visualizzata
 $PARAMETERS['info']['dbadmin_name'] = 'Admin DB'; //nome del responsabile del database
@@ -176,62 +176,71 @@ $PARAMETERS['left_column']['box']['frame_messages']['class'] = 'messages';
 $PARAMETERS['left_column']['box']['frame_messages']['page'] = 'frame_messages'; //Link ai messaggi
 $PARAMETERS['left_column']['box']['frame_forum']['class'] = 'forums';
 $PARAMETERS['left_column']['box']['frame_forum']['page'] = 'frame_forums'; //Link al forum
-$PARAMETERS['left_column']['box']['link_menu']['class'] = 'menu';
-$PARAMETERS['left_column']['box']['link_menu']['page'] = 'link_menu'; //Menu' del gioco.
+$PARAMETERS['left_column']['box']['frame_docu']['class'] = 'documentazione';
+$PARAMETERS['left_column']['box']['frame_docu']['page'] = 'frame_docu'; //Link al forum
+
 
 /*COLONNA DESTRA*/
-$PARAMETERS['right_column']['box']['frame_presenti']['class'] = 'presenti';
-$PARAMETERS['right_column']['box']['frame_presenti']['page'] = 'frame_presenti'; //Presenti.
-
+$PARAMETERS['left_column']['box']['frame_presenti']['class'] = 'presenti';
+$PARAMETERS['left_column']['box']['frame_presenti']['page'] = 'frame_presenti'; //Presenti.
+$PARAMETERS['right_column']['box']['link_menu']['class'] = 'menu';
+$PARAMETERS['right_column']['box']['link_menu']['page'] = 'link_menu'; //Menu' del gioco.
 
 /* NOMI CHIAVE DEL GIOCO */
-$PARAMETERS['names']['users_name']['sing'] = 'Utente'; //nome singolare degli utenti
-$PARAMETERS['names']['users_name']['plur'] = 'Utenti'; //nome plurale degli utenti
-$PARAMETERS['names']['currency']['sing'] = 'Moneta'; //nome singolare della valuta nel gioco
-$PARAMETERS['names']['currency']['plur'] = 'Monete'; //nome plurale della valuta nel gioco
-$PARAMETERS['names']['currency']['short'] = 'MO'; //nome breve della valuta nel gioco
+$PARAMETERS['names']['users_name']['sing'] = 'Personaggio'; //nome singolare degli utenti
+$PARAMETERS['names']['users_name']['plur'] = 'Personaggi'; //nome plurale degli utenti
+$PARAMETERS['names']['helper']['sing'] = 'Helper'; // same rights of Personaggio
+$PARAMETERS['names']['currency']['sing'] = 'Euro'; //nome singolare della valuta nel gioco
+$PARAMETERS['names']['currency']['plur'] = 'Euro'; //nome plurale della valuta nel gioco
+$PARAMETERS['names']['currency']['short'] = 'EUR'; //nome breve della valuta nel gioco
 $PARAMETERS['names']['private_message']['sing'] = 'Messaggio'; //nome dei messaggi privati tra utenti (singolare)
 $PARAMETERS['names']['private_message']['plur'] = 'Messaggi'; //nome dei messaggi privati tra utenti (plurale)
 $PARAMETERS['names']['private_message']['image_file'] = ''; //immagine del link ai messaggi
 $PARAMETERS['names']['private_message']['image_file_onclick'] = ''; //immagine al passaggio del mouse dei messaggi
 $PARAMETERS['names']['private_message']['image_file_new'] = ''; //immagine nuovi messaggi
-$PARAMETERS['names']['forum']['sing'] = 'Bacheca'; //nome dei forum (singolare)
-$PARAMETERS['names']['forum']['plur'] = 'Bacheche'; //nome dei forum (plurale)
+$PARAMETERS['names']['forum']['sing'] = 'Forum'; //nome dei forum (singolare)
+$PARAMETERS['names']['forum']['plur'] = 'Forum'; //nome dei forum (plurale)
 $PARAMETERS['names']['forum']['image_file'] = ''; //immagine del forum
 $PARAMETERS['names']['forum']['image_file_onclick'] = ''; //immagine al passaggio del mouse del forum
 $PARAMETERS['names']['forum']['image_file_new'] = ''; //immagine nuove attività forum
-$PARAMETERS['names']['guild_name']['sing'] = 'Gilda'; //nome delle gilde nel gioco (singolare)
-$PARAMETERS['names']['guild_name']['plur'] = 'Gilde'; //nome delle gilde nel gioco (plurale)
-$PARAMETERS['names']['guild_name']['lead'] = 'Capogilda'; //nome del capo gilda nel gioco (plurale)
-$PARAMETERS['names']['guild_name']['members'] = 'Affiliati'; //componenti della gilda (plurale)
-$PARAMETERS['names']['guild_name']['type'] = 'Allineamento'; //nome del tipo gilda nel gioco (singolare)
+$PARAMETERS['names']['documentazione']['sing'] = 'Documentazione'; //nome dei forum (plurale)
+$PARAMETERS['names']['documentazione']['plur'] = 'Documentazione'; //nome dei forum (plurale)
+$PARAMETERS['names']['documentazione']['image_file'] = ''; //immagine del link ai messaggi
+$PARAMETERS['names']['documentazione']['image_file_onclick'] = ''; //immagine al passaggio del mouse dei messaggi
+$PARAMETERS['names']['documentazione']['image_file_new'] = ''; //immagine nuovi messaggi
+$PARAMETERS['names']['guild_name']['sing'] = 'Gruppo di gioco'; //nome delle gilde nel gioco (singolare)
+$PARAMETERS['names']['guild_name']['plur'] = 'Gruppi di gioco'; //nome delle gilde nel gioco (plurale)
+$PARAMETERS['names']['guild_name']['lead'] = 'Referente'; //nome del capo gilda nel gioco (plurale) // OLD HELPER
+$PARAMETERS['names']['guild_name']['members'] = 'Membri'; //componenti della gilda (plurale)
+$PARAMETERS['names']['guild_name']['type'] = 'Tipologia'; //nome del tipo gilda nel gioco (singolare)
 $PARAMETERS['names']['race']['sing'] = 'Razza'; //nome delle razze nel gioco (singolare)
 $PARAMETERS['names']['race']['plur'] = 'Razze'; //nome delle razze nel gioco (plurale)
 $PARAMETERS['names']['race']['lead'] = 'Caporazza'; //nome del capo razza nel gioco (plurale)
 $PARAMETERS['names']['master']['sing'] = 'Master'; //titolo degli arbitri (singolare)
 $PARAMETERS['names']['master']['plur'] = 'Master'; //titolo degli arbitri (plurale)
-$PARAMETERS['names']['moderators']['sing'] = 'Admin'; //titolo dei moderatori (singolare)
-$PARAMETERS['names']['moderators']['plur'] = 'Admin'; //titolo dei moderatori (plurale)
+$PARAMETERS['names']['moderators']['sing'] = 'Moderatore'; //titolo dei moderatori (singolare)
+$PARAMETERS['names']['moderators']['plur'] = 'Moderatori'; //titolo dei moderatori (plurale)
+$PARAMETERS['names']['fake_mod']['sing'] = 'Admin'; //titolo dei moderatori (singolare)
+$PARAMETERS['names']['fake_mod']['plur'] = 'Admin'; //titolo dei moderatori (plurale)
 $PARAMETERS['names']['administrator']['sing'] = 'Gestore'; //titolo del super user (singolare)
 $PARAMETERS['names']['administrator']['plur'] = 'Gestori'; //titolo del super user (plurale)
 $PARAMETERS['names']['gamemenu']['menu'] = 'Menu'; //Nome in calce al menu del gioco
 $PARAMETERS['names']['market_name'] = 'Mercato'; //Nome del mercato
-$PARAMETERS['names']['maps_location'] = 'Alle mappe'; //Appare se il PG si trova su una mappa
+$PARAMETERS['names']['maps_location'] = ''; //Appare se il PG si trova su una mappa
 $PARAMETERS['names']['base_location'] = 'In giro'; //Appare nei presenti se non è possibile localizzare il pg
-$PARAMETERS['names']['stats']['car0'] = 'Forza'; //Caratteristiche del personaggio nella scheda
-$PARAMETERS['names']['stats']['car1'] = 'Robustezza';
-$PARAMETERS['names']['stats']['car2'] = 'Destrezza';
-$PARAMETERS['names']['stats']['car3'] = 'Intelligenza';
-$PARAMETERS['names']['stats']['car4'] = 'Saggezza';
-$PARAMETERS['names']['stats']['car5'] = 'Percezioni';
-$PARAMETERS['names']['stats']['hitpoints'] = 'Punti ferita';
+$PARAMETERS['names']['stats']['car0'] = 'Attacco'; //Caratteristiche del personaggio nella scheda
+$PARAMETERS['names']['stats']['car1'] = 'Agilità';
+$PARAMETERS['names']['stats']['car2'] = 'Mente';
+$PARAMETERS['names']['stats']['car3'] = 'Tempra';
+$PARAMETERS['names']['stats']['car4'] = 'Resistenza';
+$PARAMETERS['names']['stats']['hitpoints'] = 'PF';
 
 /* HELP: I nomi chiave sono i termini con i quali ci si riferisce, all'interno del gioco, ad alcune figure ricorrenti, come il forum interno o lo staff del sito.*/
 
 
 /* DATA DELL'AMBIENTAZIONE */
-$PARAMETERS['date']['offset'] = 0;
-$PARAMETERS['date']['base_temperature'] = -4;//temperatura minima assoluta in gradi.
+$PARAMETERS['date']['offset'] = +8;
+$PARAMETERS['date']['base_temperature'] = 2;//temperatura minima assoluta in gradi.
 
 /* HELP: L'offset della data viene sommato all'anno corrente per ottenere l'anno desiderato per il gioco. Es: Se il gioco si svolge nel 1290 e l'anno corrente e' il 2010 allora l'offset necessario è 1290-2010= -720, nel caso del 2120 l'offset e' +110. Il sistema potrebbe risultare incoerente per gli anni bisestili, e' consiglibile che lo sfasamento tenga conto della posizione dell'anno corrente nel corrente quadriennio.*/
 
@@ -243,20 +252,21 @@ $PARAMETERS['settings']['first_map'] = -1;//ID della mappa corrispondente al pri
 $PARAMETERS['settings']['first_money'] = 50;//Quantita' di denaro iniziale per i PG
 $PARAMETERS['settings']['posts_per_page'] = 15;//Numero di post per pagina visualizzati nei forum
 $PARAMETERS['settings']['records_per_page'] = 15;//Numero di record per pagina visualizzati nei pannelli gestione
+$PARAMETERS['settings']['records_per_page_calendar'] = 10;
 $PARAMETERS['settings']['messages_per_page'] = 40;//Numero di messaggi visualizzati per pagina nel sistema di messaggistica privata
 $PARAMETERS['settings']['messages_limit'] = 50;//Numero di messaggi privati oltre il quale appare il suggerimento di cancellarli
 $PARAMETERS['settings']['minimum_employment'] = 10;//Numero di giorni entro i quali non è possibile scegliere un'altro lavoro o essere esclusi da una gilda.
 $PARAMETERS['settings']['guilds_limit'] = 2;//Numero massimo di gilde a cui si può essere affiliati. Il numero tiene conto delle gilde di cui un personaggio è membro e dell'eventuale lavoro indipendente che svolte. In ogni caso il sistema permette di svolgere un unico lavoro indipendente. La paga giornaliera del personaggio e' la somma degli introiti di tutti i ruoli di gilda e dell'eventuale lavoro che riveste.
 $PARAMETERS['settings']['resell_price'] = 30; //Percentuale di svalutazione degli oggetti rivenduti al mercato.
-$PARAMETERS['settings']['first_px'] = 100;//Esperienza iniziale. Se il gioco non prevede abilità dovrebbe essere 0.
+$PARAMETERS['settings']['first_px'] = 0;//Esperienza iniziale. Se il gioco non prevede abilità dovrebbe essere 0.
 $PARAMETERS['settings']['max_hp'] = 100;//Punti ferita.
 $PARAMETERS['settings']['px_x_rank'] = 10; //Costo in px per rango di abilità. Il valore di questo campo viene moltiplicato al rango successivo dell'abità per determinarne il costo. Es: Se il valore è 10 e il rango da aquisite è 5 il suo costo è 5x10=50px.
 $PARAMETERS['settings']['skills_cap'] = 10;//Punteggio massimo per un'abilità.
-$PARAMETERS['settings']['initial_cars_cap'] = 10;//Punteggio massimo iniziale per una caratteristica.
-$PARAMETERS['settings']['cars_cap'] = 10;//Punteggio massimo per una caratteristica.
-$PARAMETERS['settings']['cars_sum'] = 40;//Punteggio totale da distribuire tra le caratteristiche in fase di iscrizione.
+$PARAMETERS['settings']['initial_cars_cap'] = 9;//Punteggio massimo iniziale per una caratteristica.
+$PARAMETERS['settings']['cars_cap'] = 12;//Punteggio massimo per una caratteristica.
+$PARAMETERS['settings']['cars_sum'] = 30;//Punteggio totale da distribuire tra le caratteristiche in fase di iscrizione.
 $PARAMETERS['settings']['view_logs'] = 10; //Numero di log visualizzato.
-$PARAMETERS['settings']['auto_salary'] = 'OFF'; //ON per attivare l'accredito automatico dello stipendio al primo login
+$PARAMETERS['settings']['auto_salary'] = 'ON'; //ON per attivare l'accredito automatico dello stipendio al primo login
 
 
 
@@ -295,8 +305,8 @@ $PARAMETERS['settings']['audiotype']['.wav'] = 'audio/x-wav';
  * e impostargli come nome 'audio_new_LABELNOTIFICA', dove LABELNOTIFICA corrisponde a quello passato in AudioController
  * @author Blancks
  */
-$PARAMETERS['settings']['audio_new_messages'] = 'beep.wav';
-$PARAMETERS['settings']['audio_new_chat'] = 'beep.wav';
+$PARAMETERS['settings']['audio_new_messages'] = 'notif.mp3';
+$PARAMETERS['settings']['audio_new_chat'] = 'notif.mp3';
 
 
 /**    * Dadi che compaiono nella tendina, solo se i dadi sono abilitati!
@@ -309,12 +319,18 @@ $PARAMETERS['mode']['dices'] = 'ON';
 /* HELP: é possibile aggiungere la possibilità di usare altri tipi di dado implementando questa sezione. E' possibile anche ridurre la scelta dei possibili tipi di dado semplicemente rimuovendo una riga qui.*/
 $PARAMETERS['settings']['skills_dices']['d4'] = 4;
 $PARAMETERS['settings']['skills_dices']['d6'] = 6;
-$PARAMETERS['settings']['skills_dices']['d8'] = 8;
-$PARAMETERS['settings']['skills_dices']['d10'] = 10;
 $PARAMETERS['settings']['skills_dices']['d12'] = 12;
-$PARAMETERS['settings']['skills_dices']['d20'] = 20;
-$PARAMETERS['settings']['skills_dices']['d100'] = 100;
 /**    * Fine dadi */
+
+
+$PARAMETERS['settings']['bonus_malus']['-3'] = -3;
+$PARAMETERS['settings']['bonus_malus']['-2'] = -2;
+$PARAMETERS['settings']['bonus_malus']['-1'] = -1;
+$PARAMETERS['settings']['bonus_malus']['0'] = 0;
+$PARAMETERS['settings']['bonus_malus']['1'] = 1;
+$PARAMETERS['settings']['bonus_malus']['2'] = 2;
+$PARAMETERS['settings']['bonus_malus']['3'] = 3;
+
 
 
 /**    * Configurazione avatar da chat
@@ -324,8 +340,9 @@ $PARAMETERS['mode']['chat_avatar'] = 'ON';
 //ON:abilita gli avatar da chat e la possibilità di specificarli in scheda
 //OFF disabilita
 
-$PARAMETERS['settings']['chat_avatar']['width'] = 50;    # Dimensione in pixel della larghezza dell'immagine consentita
-$PARAMETERS['settings']['chat_avatar']['height'] = 50;    # Dimensione in pixel dell'altezza dell'imagine consentita
+$PARAMETERS['settings']['chat_avatar']['width'] = 75;    # Dimensione in pixel della larghezza dell'immagine consentita
+$PARAMETERS['settings']['chat_avatar']['height'] = 75;    # Dimensione in pixel dell'altezza dell'imagine consentita
+$PARAMETERS['settings']['chat_avatar']['radius'] = 300;
 
 $PARAMETERS['settings']['chat_avatar']['link']['mode'] = 'ON';
 // Permette di rendere cliccabile l'avatar da chat ed aprire così la scheda del personaggio in questione (!! non funziona nel chat_save)
@@ -341,7 +358,7 @@ $PARAMETERS['settings']['chat_avatar']['link']['popup'] = 'OFF';
 /** * uso di una tooltip di preview per le descrizioni sulla mappa
  * @author Blancks
  */
-$PARAMETERS['mode']['map_tooltip'] = 'ON';
+$PARAMETERS['mode']['map_tooltip'] = 'OFF';
 //ON:abilita delle tooltip sui link in mappa che mostrano la descrizione del luogo in anteprima
 //OFF:non abilita le tooltip
 
@@ -351,17 +368,17 @@ $PARAMETERS['settings']['map_tooltip']['offset_x'] = 20;    # offset orizzontale
 
 /** * Parametri per l'incremento dell'esperienza tramite caratteri scritti
  */
-$PARAMETERS['mode']['exp_by_chat'] = 'OFF';
+$PARAMETERS['mode']['exp_by_chat'] = 'ON';
 //ON: abilita l'incremento dei punti esperienza tramite i caratteri scritti in chat.
 //OFF: disabilita l'incremento dei punti esperienza tramite i caratteri scritti in chat.
 
-$PARAMETERS['settings']['exp_by_chat']['number'] = '1000';
+$PARAMETERS['settings']['exp_by_chat']['number'] = '800';
 // Numero di caratteri necessari al fine di aggiungere punti esperienza.
-$PARAMETERS['settings']['exp_by_chat']['value'] = '0';
+$PARAMETERS['settings']['exp_by_chat']['value'] =  0.1;
 //Numero di punti da assegnare quando si superano i caratteri necessari.
 //Impostare 0 nel caso si vuole dare 1 punto ogni volta che si raggiungono i caratteri dichiarati prima.
 
-$PARAMETERS['mode']['exp_in_private'] == 'ON';
+$PARAMETERS['mode']['exp_in_private'] == 'OFF';
 //ON: abilita l'incremento dei punti esperienza tramite i caratteri scritti in chat privata.
 //OFF: disabilita l'incremento dei punti esperienza tramite i caratteri scritti in chat privata.
 
@@ -380,7 +397,7 @@ $PARAMETERS['settings']['forum_bbcode']['type'] = 'bbd';
 /** * Le seguenti impostazioni sono valide solo se il bbcode viene abilitato.
  * @author Blancks
  */
-$PARAMETERS['settings']['user_bbcode']['type'] = 'bbd';
+$PARAMETERS['settings']['user_bbcode']['type'] = 'native';
 // bbd : viene abilitato l'uso del plugin "BBDecoder" per la funzionalità del bbcode
 // native : viene usato la scarna formattazione bbcode di base del gdrcd
 
@@ -398,13 +415,13 @@ $PARAMETERS['settings']['bbd']['imageshack'] = 'OFF';
 /** * HELP: NON TUTTI I SERVIZI DI HOSTING SUPPORTANO IL RIDIMENSIONAMENTO DELLE IMMAGINI.
  * IN QUESTO CASO IL RIDIMENSIONAMENTO NON SARA' APPLICATO.
  */
-$PARAMETERS['settings']['bbd']['image_max_width'] = 400;
+$PARAMETERS['settings']['bbd']['image_max_width'] = 500;
 // Il parametro definisce le dimensioni massime in LARGHEZZA che un immagine può assumere, se sono superate l'immagine viene ridimensionata
 
 $PARAMETERS['settings']['bbd']['image_max_height'] = 600;
 // Il parametro definisce le dimensioni massime in ALTEZZA che un immagine può assumere, se sono superate l'immagine viene ridimensionata
 
-$PARAMETERS['settings']['bbd']['youtube'] = 'ON';
+$PARAMETERS['settings']['bbd']['youtube'] = 'OFF';
 //ON: cconsente l'abilitazione del bbtag [youtube][/youtube] per l'inclusione di video da youtube.
 //OFF: non consente l'uso
 
@@ -429,7 +446,7 @@ $PARAMETERS['settings']['html'] = HTML_FILTER_BASE;
 /** * Avviso periodico di cambio pass, funzione pel ready (H)
  * @author Blancks
  */
-$PARAMETERS['mode']['alert_password_change'] = 'ON';
+$PARAMETERS['mode']['alert_password_change'] = 'OFF';
 //ON: ogni sei mesi l'utente è avvisato mediante un messaggio nel suo profilo personale a cambiare password
 //OFF: nessuna segnalazione di avviso di cambio password ogni tot periodo
 
@@ -445,7 +462,7 @@ $PARAMETERS['settings']['alert_password_change']['alert_from_signup'] = 'OFF';
 $PARAMETERS['mode']['chat_from_bottom'] = 'OFF';
 //ON: i messaggi nuovi della chat compaiono dal basso verso l'alto
 //OFF: i messaggi nuovi della chat compaiono dall'alto verso il basso
-$PARAMETERS['mode']['give_only_if_online'] = 'ON';
+$PARAMETERS['mode']['give_only_if_online'] = 'OFF';
 //ON: gli oggetti dei personaggi possono essere ceduti fra loro solo se entrambi online e nella stessa locazione
 //OFF: gli oggetti dei personaggi possono essere ceduti fra loro anche se uno dei due non è online e indipendentemente dalla locazione
 $PARAMETERS['mode']['popup_choise'] = 'ON';
@@ -457,7 +474,7 @@ $PARAMETERS['mode']['alert_pm_via_pagetitle'] = 'ON';
 $PARAMETERS['mode']['user_online_state'] = 'ON';
 //ON:abilita la modifica per gli utenti di un campo che sarà poi visualizzato nell'elenco dei presenti mediante tooltip, se abilitato si applicano i parametri di configurazione dell'offset usati per il tooltip della mappa.
 //OFF: nega tale possibilità
-$PARAMETERS['mode']['gotomap_list'] = 'ON';
+$PARAMETERS['mode']['gotomap_list'] = 'OFF';
 //ON:abilita un menù a tendina che trasporta velocemente fra mappe o locazioni
 //OFF:lo disabilita
 $PARAMETERS['mode']['log_back_location'] = 'OFF';
@@ -480,7 +497,7 @@ $PARAMETERS['mode']['emailconfirmation'] = 'ON';
 $PARAMETERS['mode']['racialinfo'] = 'ON';
 //ON: In fase di iscrizione e' presente un link alla descrizione della razza.
 //OFF: In fase di iscrizione non è presente un link alla descrizione della razza (Se il gioco non prevede razze e la funzione razza è utilizzata in altro modo, come professione, nazionalità o altro scegliere OFF).
-$PARAMETERS['mode']['chaticons'] = 'ON';
+$PARAMETERS['mode']['chaticons'] = 'OFF';
 //ON: In chat sono visualizzate le icone relative a sesso e razza del pg.
 //OFF: In chat non sono visualizzate le icone relative a sesso, razza e gilda del pg.
 $PARAMETERS['mode']['spymessages'] = 'ON';
@@ -489,7 +506,7 @@ $PARAMETERS['mode']['spymessages'] = 'ON';
 $PARAMETERS['mode']['privaterooms'] = 'ON';
 //ON: Il gioco prevede stanze private temporanee prenotabili dai giocatori.
 //ON: Il gioco non prevede stanze private prenotabili dai giocatori.
-$PARAMETERS['mode']['spyprivaterooms'] = 'OFF';
+$PARAMETERS['mode']['spyprivaterooms'] = 'ON';
 //ON: Gli amministratori possono leggere e scrivere nelle stanze private altrui.
 //OFF:  Gli amministratori non possono leggere e scrivere nelle stanze private altrui.
 $PARAMETERS['mode']['chatsave'] = 'ON';
@@ -602,44 +619,43 @@ $PARAMETERS['mode']['chatsave_download'] = 'OFF';
 /* VOCI DEL MENU */
 $PARAMETERS['menu']['refresh']['text'] = 'Aggiorna';
 $PARAMETERS['menu']['refresh']['url'] = 'main.php?dir=' . $_SESSION['luogo'];
-$PARAMETERS['menu']['refresh']['image_file'] = '';
-$PARAMETERS['menu']['refresh']['image_file_onclick'] = '';
+$PARAMETERS['menu']['refresh']['image_file'] = 'aggiorna.png';
+$PARAMETERS['menu']['refresh']['image_file_onclick'] = 'aggiorna.png';
 
 $PARAMETERS['menu']['map']['text'] = 'Mappa';
 $PARAMETERS['menu']['map']['url'] = 'main.php?page=mappaclick&map_id=' . $_SESSION['mappa'];
-$PARAMETERS['menu']['map']['image_file'] = '';
-$PARAMETERS['menu']['map']['image_file_onclick'] = '';
+$PARAMETERS['menu']['map']['image_file'] = 'mappa.png';
+$PARAMETERS['menu']['map']['image_file_onclick'] = 'mappa.png';
 
 $PARAMETERS['menu']['profile']['text'] = 'Scheda';
 $PARAMETERS['menu']['profile']['url'] = 'main.php?page=scheda&pg=' . $_SESSION['login'];
-/*Esempio di link nel caso si volesse aprire come scheda modale
-$PARAMETERS['menu']['profile']['url']="javascript:modalWindow('scheda', 'Scheda di ". $_SESSION['login'] ."', 'popup.php?page=scheda&pg=". $_SESSION['login'] ."');";
-*/
-$PARAMETERS['menu']['profile']['image_file'] = '';
-$PARAMETERS['menu']['profile']['image_file_onclick'] = '';
+/*Esempio di link nel caso si volesse aprire come scheda modale*/
+// $PARAMETERS['menu']['profile']['url']="javascript:modalWindow('scheda', 'Scheda di ". $_SESSION['login'] ."', 'popup.php?page=scheda&pg=". $_SESSION['login'] ."');";
 
-if ($_SESSION['permessi'] >= MODERATOR)
-{
-    $PARAMETERS['menu']['backend']['text'] = 'Gestione';
-    $PARAMETERS['menu']['backend']['url'] = 'main.php?page=gestione';
-    $PARAMETERS['menu']['backend']['image_file'] = '';
-    $PARAMETERS['menu']['backend']['image_file_onclick'] = '';
-}
+
+$PARAMETERS['menu']['calendar']['image_file'] = 'calendario.png';
+$PARAMETERS['menu']['calendar']['image_file_onclick'] = 'calendario.png';
+$PARAMETERS['menu']['calendar']['text'] = '';
+// $PARAMETERS['menu']['calendar']['url'] = 'main.php?page=calendario';
+$PARAMETERS['menu']['calendar']['url']="javascript:modalWindow('calendario', 'Scheda di ". $_SESSION['login'] ."', 'popup.php?page=calendario');";
+
+$PARAMETERS['menu']['profile']['image_file'] = 'scheda.png';
+$PARAMETERS['menu']['profile']['image_file_onclick'] = 'scheda.png';
 
 $PARAMETERS['menu']['services']['text'] = 'Servizi';
 $PARAMETERS['menu']['services']['url'] = 'main.php?page=uffici';
-$PARAMETERS['menu']['services']['image_file'] = '';
-$PARAMETERS['menu']['services']['image_file_onclick'] = '';
+$PARAMETERS['menu']['services']['image_file'] = 'servizi.png';
+$PARAMETERS['menu']['services']['image_file_onclick'] = 'servizi.png';
 
 $PARAMETERS['menu']['user_services']['text'] = 'Menu utente';
 $PARAMETERS['menu']['user_services']['url'] = 'main.php?page=utenti';
-$PARAMETERS['menu']['user_services']['image_file'] = '';
-$PARAMETERS['menu']['user_services']['image_file_onclick'] = '';
+$PARAMETERS['menu']['user_services']['image_file'] = 'utente.png';
+$PARAMETERS['menu']['user_services']['image_file_onclick'] = 'utente.png';
 
 $PARAMETERS['menu']['quit']['text'] = 'Esci';
 $PARAMETERS['menu']['quit']['url'] = 'logout.php';
-$PARAMETERS['menu']['quit']['image_file'] = '';
-$PARAMETERS['menu']['quit']['image_file_onclick'] = '';
+$PARAMETERS['menu']['quit']['image_file'] = 'esci.png';
+$PARAMETERS['menu']['quit']['image_file_onclick'] = 'esci.png';
 
 
 /* HELP: Queste voci compariranno nel menu di gioco. E' possibile scegliere se farle comparire come immagini o semplice testo. Se, per ciascuna voce, è specificato il campo image_file allora la voce di menu compare come immagine e text viene interpretato come testo alternativo all'immagine.
@@ -650,10 +666,15 @@ $PARAMETERS['menu']['quit']['image_file_onclick'] = '';
 
 /* PANNELLO SERVIZI */
 $PARAMETERS['office_page_name'] = 'Servizi';
-$PARAMETERS['office']['image_file'] = '';
-$PARAMETERS['office']['pg_list']['text'] = 'Anagrafe';
-$PARAMETERS['office']['pg_list']['url'] = 'main.php?page=servizi_anagrafe';
-$PARAMETERS['office']['pg_list']['access_level'] = USER;
+$PARAMETERS['office']['image_file'] = 'servizi.png';
+// $PARAMETERS['office']['pg_list']['text'] = 'Anagrafe';
+// $PARAMETERS['office']['pg_list']['url'] = 'main.php?page=servizi_anagrafe';
+// $PARAMETERS['office']['pg_list']['access_level'] = USER;
+
+$PARAMETERS['office']['prestavolto']['text']='Anagrafe e Prestavolti';
+$PARAMETERS['office']['prestavolto']['url']='main.php?page=prestavolto';
+$PARAMETERS['office']['prestavolto']['access_level']=USER;
+
 $PARAMETERS['office']['guilds_adm']['text'] = "Amministrazione " . strtolower($PARAMETERS['names']['guild_name']['sing']);
 $PARAMETERS['office']['guilds_adm']['url'] = 'main.php?page=servizi_adm_gilde';
 $PARAMETERS['office']['guilds_adm']['access_level'] = USER;
@@ -663,9 +684,9 @@ $PARAMETERS['office']['job']['access_level'] = USER;
 $PARAMETERS['office']['guilds']['text'] = $PARAMETERS['names']['guild_name']['plur'];
 $PARAMETERS['office']['guilds']['url'] = 'main.php?page=servizi_gilde';
 $PARAMETERS['office']['guilds']['access_level'] = USER;
-$PARAMETERS['office']['market']['text'] = 'Mercato';
-$PARAMETERS['office']['market']['url'] = 'main.php?page=servizi_mercato';
-$PARAMETERS['office']['market']['access_level'] = USER;
+// $PARAMETERS['office']['market']['text'] = 'Mercato';
+// $PARAMETERS['office']['market']['url'] = 'main.php?page=servizi_mercato';
+// $PARAMETERS['office']['market']['access_level'] = USER;
 if (ESITI)
 {
     $PARAMETERS['office']['esiti']['text'] = 'Pannello esiti';
@@ -683,15 +704,12 @@ $PARAMETERS['office']['bank']['url'] = 'main.php?page=servizi_banca';
 $PARAMETERS['office']['bank']['access_level'] = USER;
 /* PANNELLO UTENTE */
 $PARAMETERS['user_page_name'] = 'Menù utente';
-if ($PARAMETERS['mode']['skillsystem'] == 'ON')
+if ($PARAMETERS['mode']['skillsystem'] == 'OFF')
 {
     $PARAMETERS['user']['skill_list']['text'] = 'Abilità';
     $PARAMETERS['user']['skill_list']['url'] = 'main.php?page=user_abilita';
     $PARAMETERS['user']['skill_list']['access_level'] = USER;
 }
-$PARAMETERS['user']['plot']['text'] = 'Ambientazione';
-$PARAMETERS['user']['plot']['url'] = 'main.php?page=user_ambientazione';
-$PARAMETERS['user']['plot']['access_level'] = USER;
 $PARAMETERS['user']['name']['text'] = 'Cambio nome';
 $PARAMETERS['user']['name']['url'] = 'main.php?page=user_cambio_nome';
 $PARAMETERS['user']['name']['access_level'] = MODERATOR;
@@ -701,15 +719,9 @@ $PARAMETERS['user']['pass']['access_level'] = USER;
 $PARAMETERS['user']['delete']['text'] = 'Cancella account';
 $PARAMETERS['user']['delete']['url'] = 'main.php?page=user_cancella_pg';
 $PARAMETERS['user']['delete']['access_level'] = SUPERUSER;
-$PARAMETERS['user']['races']['text'] = 'Elenco razze';
-$PARAMETERS['user']['races']['url'] = 'main.php?page=user_razze';
-$PARAMETERS['user']['races']['access_level'] = USER;
-$PARAMETERS['user']['rules']['text'] = 'Regolamento';
-$PARAMETERS['user']['rules']['url'] = 'main.php?page=user_regolamento';
-$PARAMETERS['user']['rules']['access_level'] = USER;
-$PARAMETERS['user']['stats']['text'] = 'Statistiche del sito';
-$PARAMETERS['user']['stats']['url'] = 'main.php?page=user_stats&links=yes';
-$PARAMETERS['user']['stats']['access_level'] = USER;
+// $PARAMETERS['user']['races']['text'] = 'Elenco razze';
+// $PARAMETERS['user']['races']['url'] = 'main.php?page=user_razze';
+// $PARAMETERS['user']['races']['access_level'] = USER;
 /* PANNELLO GESTIONE */
 $PARAMETERS['administration_page_name'] = 'Gestione';
 $PARAMETERS['administration']['image_file'] = '';
@@ -719,6 +731,15 @@ $PARAMETERS['administration']['log_chat']['access_level'] = MODERATOR;
 $PARAMETERS['administration']['log_eventi']['text'] = 'Log eventi';
 $PARAMETERS['administration']['log_eventi']['url'] = 'main.php?page=log_eventi';
 $PARAMETERS['administration']['log_eventi']['access_level'] = MODERATOR;
+
+if ($_SESSION['permessi'] >= MODERATOR)
+{
+    $PARAMETERS['menu']['backend']['text'] = 'Gestione';
+    $PARAMETERS['menu']['backend']['url'] = 'main.php?page=gestione';
+    $PARAMETERS['menu']['backend']['image_file'] = 'gestione.png';
+    $PARAMETERS['menu']['backend']['image_file_onclick'] = 'gestione.png';
+}
+
 if ($PARAMETERS['mode']['spymessages'] == 'ON')
 {
     $PARAMETERS['administration']['log_messaggi']['text'] = 'Log messaggi';
@@ -741,15 +762,9 @@ if (ESITI)
 $PARAMETERS['administration']['email']['text'] = 'Gestione email';
 $PARAMETERS['administration']['email']['url'] = 'main.php?page=gestione_cambio_email';
 $PARAMETERS['administration']['email']['access_level'] = MODERATOR;
-$PARAMETERS['administration']['skills']['text'] = 'Gestione abilità';
-$PARAMETERS['administration']['skills']['url'] = 'main.php?page=gestione_abilita';
-$PARAMETERS['administration']['skills']['access_level'] = SUPERUSER;
-$PARAMETERS['administration']['plot']['text'] = 'Gestione ambientazione';
-$PARAMETERS['administration']['plot']['url'] = 'main.php?page=gestione_ambientazione';
-$PARAMETERS['administration']['plot']['access_level'] = SUPERUSER;
 $PARAMETERS['administration']['forums']['text'] = 'Gestione bacheche';
 $PARAMETERS['administration']['forums']['url'] = 'main.php?page=gestione_bacheche';
-$PARAMETERS['administration']['forums']['access_level'] = SUPERUSER;
+$PARAMETERS['administration']['forums']['access_level'] = MODERATOR;
 $PARAMETERS['administration']['guilds']['text'] = 'Gestione gilde e ruoli';
 $PARAMETERS['administration']['guilds']['url'] = 'main.php?page=gestione_gilde';
 $PARAMETERS['administration']['guilds']['access_level'] = SUPERUSER;
@@ -767,19 +782,39 @@ $PARAMETERS['administration']['levels']['url'] = 'main.php?page=gestione_permess
 $PARAMETERS['administration']['levels']['access_level'] = SUPERUSER;
 $PARAMETERS['administration']['races']['text'] = 'Gestione razze';
 $PARAMETERS['administration']['races']['url'] = 'main.php?page=gestione_razze';
-$PARAMETERS['administration']['races']['access_level'] = SUPERUSER;
-$PARAMETERS['administration']['rules']['text'] = 'Gestione regolamento';
-$PARAMETERS['administration']['rules']['url'] = 'main.php?page=gestione_regolamento';
-$PARAMETERS['administration']['rules']['access_level'] = SUPERUSER;
+$PARAMETERS['administration']['races']['access_level'] = MODERATOR;
 $PARAMETERS['administration']['maintenance']['text'] = 'Manutenzione';
 $PARAMETERS['administration']['maintenance']['url'] = 'main.php?page=gestione/manutenzione';
 $PARAMETERS['administration']['maintenance']['access_level'] = SUPERUSER;
+
+$PARAMETERS['administration']['gstnote']['text'] = 'Gestisci Note del Fato';
+$PARAMETERS['administration']['gstnote']['url'] = 'main.php?page=GSTNOTE';
+$PARAMETERS['administration']['gstnote']['access_level'] = SUPERUSER;
+
+
+/*** Configurazione voce di menù gestione relativo ai gruppi/messaggi
+*/
+$PARAMETERS['administration']['msggrp']['text'] = 'Log gruppi e messaggi';
+$PARAMETERS['administration']['msggrp']['url'] = 'main.php?page=log_msg';
+$PARAMETERS['administration']['msggrp']['access_level'] = SUPERUSER;
+
+
+$PARAMETERS['setting']['msg']['group']['maxrecipients'] = 25; //numero massimo destinatari per gruppi tra utenti
+$PARAMETERS['setting']['msg']['group']['maxgpagerouptoview'] = 25;  // massimo numero di pagine visualizzabile per leggere i gruppi più vecchi
+$PARAMETERS['setting']['msg']['group']['maxpagemsgtoview'] = 25; // massimo numero di pagine visualizzabile per leggere i messaggi più vecchi
+
+/*** Configurazione mittenti speciali e chi ha permesso di usarli:
+Elencare i nomi/descrizioni separati da virgola, se lasciato vuoto non sarà possibile usare questa funzionalità
+(es. $PARAMETERS['setting']['msg']['group']['sender'] = "Consiglio studentesco, Organizzazione X, L\'incredibile gruppo segreto";
+*/
+$PARAMETERS['setting']['msg']['group']['sender']['dssender'] = "";
+$PARAMETERS['setting']['msg']['group']['sender']['access_level'] = GAMEMASTER;
 
 
 /* HELP: Elenco delle voci dei menu' dei servizi e di gestione. E' sconsigliato operare modifiche. Le opzioni sono disponibili solo agli account con il livello d'accesso specificato o superiore.
 Livelli di accesso utente:
 USER: Utente normale.
 SUPERUSER: Amministratore.
-MODERATOR: Admin.
+MODERATOR: Moderatore.
 GAMEMASTER: Master.
 GUILDMODERATOR: Master di gilda.*/

@@ -33,7 +33,7 @@ Avatar
     </div>
 
     <?php
-    $query="SELECT id, alias, contatti.descrizione, personaggio.url_img_chat, personaggio.nome FROM contatti LEFT JOIN personaggio 
+    $query="SELECT id, alias, contatti.descrizione, personaggio.url_img_chat, personaggio.nome FROM contatti LEFT JOIN personaggio
 ON nome=contatto WHERE pg='".gdrcd_filter('url', $_REQUEST['pg']) . "' ORDER BY contatto DESC";
 
     $result = gdrcd_query($query, 'result');
@@ -42,7 +42,13 @@ ON nome=contatto WHERE pg='".gdrcd_filter('url', $_REQUEST['pg']) . "' ORDER BY 
         ?>
         <div class="tr">
             <div class="td">
-                <img src="<?=$row['url_img_chat']?>" style="width: 50px; height: 50px">
+            <!-- <img src="<?=$row['url_img_chat']?>" style="width: 50px; height: 50px"> -->
+
+                <?php if (empty($row['url_img_chat']) || $row['url_img_chat'] == " ") { ?>
+                  <img src="imgs/avatars/sigla.png" class="contatti_avatar"/>
+                <?php } else { ?>
+                    <img src="<?=$row['url_img_chat']?>" class="contatti_avatar"  />
+                <?php } ?>
             </div>
             <div class="td">
                 <b><a href="../main.php?page=scheda&pg=<?=gdrcd_filter('in', $row['nome'])?>" class="link_sheet" target="_top">
@@ -67,7 +73,7 @@ ON nome=contatto WHERE pg='".gdrcd_filter('url', $_REQUEST['pg']) . "' ORDER BY 
                                 class="btn-link">[<?php echo $MESSAGE['interface']['forums']['link']['edit']; ?>]
                         </button>
                     </form>
-                
+
                     <form action="main.php?page=scheda_contatti&pg=<?php echo gdrcd_filter('url', $_REQUEST['pg']); ?>"
                           method="post">
                         <input hidden value="delete" name="op">

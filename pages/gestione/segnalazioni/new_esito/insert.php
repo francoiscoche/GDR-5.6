@@ -35,12 +35,12 @@ if ($_POST['op']=='insert') {
         $dest = $_POST['pg'];
 
         #Invio
-        #gdrcd_query("INSERT INTO messaggi (mittente, destinatario, spedito, testo) VALUES ('Sistema esiti', '" . gdrcd_filter('in', $dest) . "', NOW(), '" . gdrcd_filter('in', $text). "')");
-    }
+        #gdrcd_sendSystemMsg(gdrcd_filter('in', $dest), gdrcd_filter('in', $text));
+	}
     ?>
     <div class="warning">
         <?php echo gdrcd_filter('out',$MESSAGE['warning']['inserted']);?>
     </div>
-    <br><a href="main.php?page=gestione_segnalazioni&segn=esiti_master">Torna indietro</a>
 
-<?php }
+<?	}
+?>

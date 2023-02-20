@@ -36,7 +36,7 @@
                     } else {
                         echo gdrcd_html_filter($personaggio['storia']);
                     } ?>
-        </div>
+            </div>
         </div>
         <!-- Link a piè di pagina -->
         <div class="link_back">

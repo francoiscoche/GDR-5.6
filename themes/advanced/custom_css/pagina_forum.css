@@ -9,17 +9,18 @@ div.elementi_elenco,
 	background-color: #0b170f !important;
 }
 
-div.pagina_forum div.elenco_record_gioco {
+/* div.pagina_forum div.elenco_record_gioco {
 	padding: 0px 200px 20px 200px;
-}
+} */
 
 div.pagina_forum div.capitolo_elenco {
 	background-color: #203120;
 }
 
-/* div.pagina_forum div.page_body {
-	margin-top: 50px;
-} */
+div.pagina_forum div.page_body {
+	max-width: 900px;
+    margin: 0 auto;
+}
 
 div.pagina_forum div.panels_box {
 	background-color: #d1d1d100 !important;
@@ -31,4 +32,24 @@ div.pagina_forum div.elenco_record_gioco table td {
 
 div.pagina_forum div.elenco_record_gioco table tr {
 	border: none;
+}
+
+div.pagina_forum td.casella_elemento.forum_cate {
+	float: left;
+	padding-left: 70px;
+}
+div.pagina_forum div.forum_date_big
+ {
+	font-size: 12px !important;
+}
+
+div.pagina_forum,
+div.pagina_forum a {
+	color:#d0d0d0 !important;
+}
+
+div.pagina_forum .forum_avatar img {
+	width: 75px;
+    height: 75px;
+    border-radius: 300px;
 }

@@ -51,9 +51,9 @@
 
     if( ! empty($PARAMETERS['names']['gamemenu'][$mkey])) {
         ?>
-        <div class="page_title">
+        <!-- <div class="page_title">
             <h2><?php echo gdrcd_filter('out', $PARAMETERS['names']['gamemenu'][$mkey]); ?></h2>
-        </div>
+        </div> -->
         <?php
     }
     ?>
@@ -75,11 +75,11 @@
                 } else {
                     if( ! empty($link_menu['image_file_onclick'])) {
                         $hovers['link_'.$mkey.'_'.$key] = [
-                            'normal' => '/themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file'],
-                            'hover'  => '/themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file_onclick']
+                            'normal' => 'themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file'],
+                            'hover'  => 'themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file_onclick']
                         ];
                     }
-                    $content = '<img src="/themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file'].'" alt="'.gdrcd_filter('out',
+                    $content = '<img src="themes/'.$PARAMETERS['themes']['current_theme'].'/imgs/'.$mkey.'/'.$link_menu['image_file'].'" alt="'.gdrcd_filter('out',
                                                                                                                                                               $link_menu['text']
                         ).'" title="'.gdrcd_filter('out', $link_menu['text']).'"  />';
                 }

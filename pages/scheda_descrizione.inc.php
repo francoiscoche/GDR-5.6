@@ -42,11 +42,11 @@
         <!-- Link a piè di pagina -->
 
     </div>
-    <div class="page_title">
+    <!-- <div class="page_title">
         <h2><?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['menu']['friend']); ?></h2>
-    </div>
+    </div> -->
     <div class="page_body">
-        <div class="panels_box">
+        <!-- <div class="panels_box">
             <div class="body_box">
                 <?php
                 /** * Html, bbcode o entrambi ?
@@ -64,7 +64,7 @@
                     echo gdrcd_html_filter($personaggio['affetti']);
                 } ?>
             </div>
-        </div>
+        </div> -->
         <!-- Link a piè di pagina -->
         <div class="link_back">
             <a href="main.php?page=scheda&pg=<?php echo gdrcd_filter('url', $_REQUEST['pg']); ?>"><?php echo gdrcd_filter('out', $MESSAGE['interface']['sheet']['link']['back']); ?></a>

@@ -43,7 +43,7 @@ $ultimotipo = -1;
                             ?>
                         </div>
                     </td>
-                    <td class="casella_elemento">
+                    <td class="casella_elemento forum_cate">
                         <div class="elementi_elenco">
                             <a href="main.php?page=forum&op=visit&what=<?php echo gdrcd_filter('out', $row['id_araldo']); ?>&name=<?php echo gdrcd_filter('out', $row['nome']); ?>">
                                 <?php echo gdrcd_filter('out', $row['nome']); ?>

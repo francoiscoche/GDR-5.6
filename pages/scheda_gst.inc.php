@@ -14,22 +14,22 @@
     if ($_POST['op'] == 'modify')
     {
         gdrcd_query(
-            "UPDATE personaggio 
-                    SET affetti = '" . gdrcd_filter('in', $_POST['modifica_affetti']) . "', 
-                        descrizione = '" . gdrcd_filter('in', $_POST['modifica_background']) . "', 
-                        url_media = '" . gdrcd_filter('in', gdrcd_filter('fullurl', $_POST['modifica_url_media'])) . "', 
-                        url_img = '" . gdrcd_filter('in', gdrcd_filter('fullurl', $_POST['modifica_url_img'])) . "', 
-                        car0 = " . gdrcd_filter('num', $_POST['car0']) . ", 
-                        car1 = " . gdrcd_filter('num', $_POST['car1']) . ", 
-                        car2 = " . gdrcd_filter('num', $_POST['car2']) . ", 
-                        car3 = " . gdrcd_filter('num', $_POST['car3']) . ", 
-                        car4 = " . gdrcd_filter('num', $_POST['car4']) . ",  
-                        car5 = " . gdrcd_filter('num', $_POST['car5']) . ", 
-                        sesso = '" . gdrcd_filter('in', $_POST['modifica_sesso']) . "', 
-                        id_razza = " . gdrcd_filter('num', $_POST['modifica_razza']) . ", 
-                        banca=" . gdrcd_filter('num', $_POST['modifica_banca']) . ", 
-                        salute_max=" . gdrcd_filter('num', $_POST['modifica_salute_max']) . " 
-                    WHERE   nome = '" . gdrcd_filter('in', $_REQUEST['pg']) . "' 
+            "UPDATE personaggio
+                    SET affetti = '" . gdrcd_filter('in', $_POST['modifica_affetti']) . "',
+                        descrizione = '" . gdrcd_filter('in', $_POST['modifica_background']) . "',
+                        url_media = '" . gdrcd_filter('in', gdrcd_filter('fullurl', $_POST['modifica_url_media'])) . "',
+                        url_img = '" . gdrcd_filter('in', gdrcd_filter('fullurl', $_POST['modifica_url_img'])) . "',
+                        car0 = " . gdrcd_filter('num', $_POST['car0']) . ",
+                        car1 = " . gdrcd_filter('num', $_POST['car1']) . ",
+                        car2 = " . gdrcd_filter('num', $_POST['car2']) . ",
+                        car3 = " . gdrcd_filter('num', $_POST['car3']) . ",
+                        car4 = " . gdrcd_filter('num', $_POST['car4']) . ",
+                        car5 = " . gdrcd_filter('num', $_POST['car5']) . ",
+                        sesso = '" . gdrcd_filter('in', $_POST['modifica_sesso']) . "',
+                        id_razza = " . gdrcd_filter('num', $_POST['modifica_razza']) . ",
+                        banca=" . gdrcd_filter('num', $_POST['modifica_banca']) . ",
+                        salute_max=" . gdrcd_filter('num', $_POST['modifica_salute_max']) . "
+                    WHERE   nome = '" . gdrcd_filter('in', $_REQUEST['pg']) . "'
                         AND permessi <= " . $_SESSION['permessi']);
         echo '<div class="warning">' . gdrcd_filter('out', $MESSAGE['warning']['modified']) . '</div>';
     } else
@@ -116,18 +116,18 @@
                             <?php echo gdrcd_filter('out', $MESSAGE['interface']['help']['bbcode']); ?>
                         </div>
 
-                        <div class='form_label'>
+                        <!-- <div class='form_label'>
                             <?php echo gdrcd_filter('out',
                                 $MESSAGE['interface']['sheet']['modify_form']['admin']['relationships']); ?>
-                        </div>
-                        <div class='form_field'>
+                        </div> -->
+                        <!-- <div class='form_field'>
                             <textarea type="textbox" name="modifica_affetti"
                                       class="form_textarea"><?php echo gdrcd_filter('out',
                                     $record['affetti']); ?></textarea>
-                        </div>
-                        <div class="form_info">
+                        </div> -->
+                        <!-- <div class="form_info">
                             <?php echo gdrcd_filter('out', $MESSAGE['interface']['help']['bbcode']); ?>
-                        </div>
+                        </div> -->
 
                         <div class='form_label'>
                             <?php echo gdrcd_filter('out',
@@ -160,7 +160,7 @@
                             <?php echo gdrcd_filter('out', $MESSAGE['register']['fields']['stats']); ?>
                         </div>
                         <div class="form_field">
-                            <table>
+                            <table class="punti-caratteristiche">
                                 <tr>
                                     <td>
                                         <?php echo gdrcd_filter('out', $PARAMETERS['names']['stats']['car0']); ?><br/>
@@ -232,7 +232,7 @@
                                             <?php } ?>
                                         </select>
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         <?php echo gdrcd_filter('out', $PARAMETERS['names']['stats']['car5']); ?><br/>
                                         <select name="car5">
                                             <?php for ($i = 1; $i <= $PARAMETERS['settings']['cars_cap']; $i++)
@@ -245,7 +245,7 @@
                                                 </option>
                                             <?php } ?>
                                         </select>
-                                    </td>
+                                    </td> -->
                                 <tr>
                             </table>
                         </div>

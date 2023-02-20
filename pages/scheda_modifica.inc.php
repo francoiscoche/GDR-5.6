@@ -84,7 +84,7 @@
                 }
 
 
-                gdrcd_query("UPDATE personaggio SET cognome = '" . gdrcd_filter('in',
+                gdrcd_query("UPDATE personaggio SET prestavolto = '".gdrcd_filter('in',$_POST['modifica_prestavolto'])."', cognome = '" . gdrcd_filter('in',
                         $_POST['modifica_cognome']) . "', storia = '" . $modifica_storia . "',  affetti = '" . $modifica_affetti . "', descrizione = '" . $modifica_background . "', url_media = '" . gdrcd_filter('in',
                         gdrcd_filter('fullurl',
                             $_POST['modifica_url_media'])) . "', blocca_media = " . (int) $blocca_media . ", url_img = '" . gdrcd_filter('in',
@@ -134,7 +134,7 @@
         } else
         {
             /*Carico le informazioni del PG*/
-            $record = gdrcd_query("SELECT descrizione, storia, affetti, cognome, online_status, url_img, url_img_chat, url_media, blocca_media, stato, salute FROM personaggio WHERE nome='" . gdrcd_filter('get',
+            $record = gdrcd_query("SELECT descrizione, storia, affetti, cognome, online_status, url_img, url_img_chat, url_media, blocca_media, stato, salute, prestavolto FROM personaggio WHERE nome='" . gdrcd_filter('get',
                     $_REQUEST['pg']) . "'");
         }
 
@@ -175,6 +175,10 @@
                                 <input type="text" name="modifica_url_img"
                                        value="<?php echo gdrcd_filter('out', $record['url_img']); ?>"
                                        class="form_input"/>
+                            </div>
+                            <div class='form_label'>Nome del prestavolto</div>
+                            <div class='form_field'>
+                                <input type="text" name="modifica_prestavolto" value="<?php echo gdrcd_filter('out', $record['prestavolto']); ?>" class="form_input" />
                             </div>
                             <?php
                             /** * Avatar di chat
@@ -239,18 +243,18 @@
                                 <?php echo gdrcd_filter('out', $MESSAGE['interface']['help']['bbcode']); ?>
                             </div>
 
-                            <div class='form_label'>
+                            <!-- <div class='form_label'>
                                 <?php echo gdrcd_filter('out',
                                     $MESSAGE['interface']['sheet']['modify_form']['relationships']); ?>
-                            </div>
-                            <div class='form_field'>
+                            </div> -->
+                            <!-- <div class='form_field'>
                                 <textarea type="textbox" name="modifica_affetti"
                                           class="form_textarea"><?php echo gdrcd_filter('out',
                                         $record['affetti']); ?></textarea>
-                            </div>
-                            <div class="form_info">
+                            </div> -->
+                            <!-- <div class="form_info">
                                 <?php echo gdrcd_filter('out', $MESSAGE['interface']['help']['bbcode']); ?>
-                            </div>
+                            </div> -->
 
                             <div class='form_label'>
                                 <?php echo gdrcd_filter('out',

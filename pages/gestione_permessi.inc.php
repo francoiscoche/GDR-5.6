@@ -28,6 +28,9 @@
                     case MODERATOR:
                         $newrole = gdrcd_filter('out', $PARAMETERS['names']['moderators']['sing']);
                         break;
+                    case ADMINISTRATOR:
+                        $newrole = gdrcd_filter('out', $PARAMETERS['names']['fake_mod']['sing']);
+                        break;
                     case SUPERUSER:
                         $newrole = gdrcd_filter('out', $PARAMETERS['names']['administrator']['sing']);
                         break;
@@ -36,7 +39,7 @@
                 gdrcd_query("INSERT INTO log (nome_interessato, autore, data_evento, codice_evento, descrizione_evento) VALUES ('".gdrcd_filter('in', $_POST['nome'])."','".$_SESSION['login']."', NOW(), '".CHANGEDROLE."', '->".$newrole."')");
 
                 /*Avviso l'utente*/
-                gdrcd_query("INSERT INTO messaggi (mittente, destinatario, spedito, testo) VALUES ('".$_SESSION['login']."', '".gdrcd_filter('in', $_POST['nome'])."', NOW(), '".gdrcd_filter('in', $MESSAGE['interface']['administration']['roles']['message_body'][0].$newrole.$MESSAGE['interface']['administration']['roles']['message_body'][1])."')");
+                gdrcd_sendSystemMsg(gdrcd_filter('in', $_POST['nome']), gdrcd_filter('in', $MESSAGE['interface']['administration']['roles']['message_body'][0].$newrole.$MESSAGE['interface']['administration']['roles']['message_body'][1]));
 
                 ?>
                 <!-- Conferma -->
@@ -87,6 +90,10 @@
                                             <?php if($row['permessi'] == MODERATOR) {echo 'SELECTED';} ?> />
                                         <?php echo gdrcd_filter('out', $PARAMETERS['names']['moderators']['sing']); ?>
                                         </option>
+                                        <option value="<?php echo ADMINISTRATOR; ?>"
+                                            <?php if($row['permessi'] == ADMINISTRATOR) {echo 'SELECTED';} ?> />
+                                        <?php echo gdrcd_filter('out', $PARAMETERS['names']['fake_mod']['sing']); ?>
+                                        </option>
                                         <option value="<?php echo SUPERUSER; ?>"
                                             <?php if($row['permessi'] == SUPERUSER) {echo 'SELECTED';} ?> />
                                         <?php echo gdrcd_filter('out', $PARAMETERS['names']['administrator']['sing']); ?>
@@ -129,6 +136,10 @@
                                 <?php if($_SESSION['permessi'] > MODERATOR) { ?>
                                     <option value="<?php echo MODERATOR; ?>" />
                                     <?php echo gdrcd_filter('out', $PARAMETERS['names']['moderators']['sing']); ?>
+                                    </option>
+                                    <option value="<?php echo ADMINISTRATOR; ?>"
+                                            <?php if($row['permessi'] == ADMINISTRATOR) {echo 'SELECTED';} ?> />
+                                        <?php echo gdrcd_filter('out', $PARAMETERS['names']['fake_mod']['sing']); ?>
                                     </option>
                                     <option value="<?php echo SUPERUSER; ?>" />
                                     <?php echo gdrcd_filter('out', $PARAMETERS['names']['administrator']['sing']); ?>

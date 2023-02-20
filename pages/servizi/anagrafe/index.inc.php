@@ -22,10 +22,10 @@ if (gdrcd_filter('get', $_POST['action']) == "searchPersonaggio") {
         $limit = (isset($_REQUEST['limit']) && ($_REQUEST['limit'] > 0)) ? " LIMIT {$_REQUEST['limit']} " : '';
 
         // Costruisco la query
-        $querySearch = "SELECT personaggio.url_img_chat, personaggio.nome, personaggio.cognome, personaggio.sesso, 
-                               razza.nome_razza 
-                        FROM personaggio 
-                        LEFT JOIN razza ON personaggio.id_razza = razza.id_razza 
+        $querySearch = "SELECT personaggio.url_img_chat, personaggio.nome, personaggio.cognome, personaggio.sesso,
+                               razza.nome_razza
+                        FROM personaggio
+                        LEFT JOIN razza ON personaggio.id_razza = razza.id_razza
                         WHERE 1 " . (isset($whereFilters) ? ' AND ' . implode(' AND ', $whereFilters) : NULL) . '
                         ORDER BY nome DESC '.$limit;
         $resultSearch = gdrcd_query($querySearch, 'result');
@@ -56,7 +56,7 @@ if (gdrcd_filter('get', $_POST['action']) == "searchPersonaggio") {
                                 <a href="main.php?page=scheda&pg=' . gdrcd_filter('out', $rowSearch['nome']) . '">' .
                                     gdrcd_filter('out', $rowSearch['nome']) . ' ' . gdrcd_filter('out', $rowSearch['cognome']) . '
                                 </a>
-                            </div>                        
+                            </div>
                          </td>';
                 $tds[] = '<td class="casella_elemento">
                             <div class="elementi_elenco">' .
@@ -66,7 +66,7 @@ if (gdrcd_filter('get', $_POST['action']) == "searchPersonaggio") {
                 $tds[] = '<td class="casella_elemento">
                             <div class="elementi_elenco">' .
                                 gdrcd_filter('out', $rowSearch['nome_razza']) . '
-                            </div>                     
+                            </div>
                          </td>';
                 $tds[] = '<td class="casella_elemento">
                             <div class="controllo_elenco">

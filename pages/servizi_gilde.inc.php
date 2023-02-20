@@ -214,12 +214,13 @@
             <?php /*statuto*/
             $statuto = gdrcd_query("SELECT statuto FROM gilda WHERE id_gilda = ".gdrcd_filter('num', $_REQUEST['id_gilda'])."");
 
-            if(empty($statuto['statuto']) === false) { ?>
-                <table>
+            // if(empty($statuto['statuto']) === false) {
+                ?>
+                <!-- <table>
                     <tr>
-                        <td colspan="4">
+                        <td colspan="4"> -->
                             <!-- Titoletto -->
-                            <div class="capitolo_elenco">Statuto</div>
+                            <!-- <div class="capitolo_elenco">Statuto</div>
                         </td>
                     <tr>
                     <tr>
@@ -229,8 +230,7 @@
                             </div>
                         </td>
                     </tr>
-                </table>
-            <?php } ?>
+                </table> -->
             <div class="link_back">
                 <a href="main.php?page=servizi_gilde"><?php echo gdrcd_filter('out', $MESSAGE['interface']['guilds']['back']); ?></a>
             </div>

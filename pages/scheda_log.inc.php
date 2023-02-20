@@ -123,62 +123,6 @@
             <?php } ?>
 
 
-            <?php /*Seleziono gli ultimi messaggi*/
-            if ($PARAMETERS['mode']['spymessages'] == 'ON')
-            {
-                $query = "SELECT  destinatario, spedito, testo  FROM backmessaggi WHERE mittente = '" . gdrcd_filter('in',
-                        $_REQUEST['pg']) . "' ORDER BY spedito DESC LIMIT " . $num_logs . "";
-                $result = gdrcd_query($query, 'result');
-
-
-                if (gdrcd_query($result, 'num_rows') > 0)
-                {
-                    ?>
-                    <!-- Intestazione tabella elenco -->
-                    <div class="elenco_record_gioco">
-                        <table>
-                            <tr>
-                                <td class="casella_titolo">
-                                    <div class="titoli_elenco">
-                                        <?php echo gdrcd_filter('out',
-                                            $MESSAGE['interface']['sheet']['log']['date']); ?>
-                                    </div>
-                                </td>
-                                <td class="casella_titolo">
-                                    <div class="titoli_elenco">
-                                        <?php echo gdrcd_filter('out',
-                                            $MESSAGE['interface']['sheet']['log']['message']); ?>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php while ($record = gdrcd_query($result, 'fetch'))
-                            { ?>
-                                <tr>
-                                    <td class="casella_elemento">
-                                        <div class="elementi_elenco"><?php echo gdrcd_filter('out',
-                                                gdrcd_format_date($record['spedito']) . ' ' . gdrcd_format_time($record['spedito'])); ?></div>
-                                    </td>
-                                    <td class="casella_elemento">
-                                        <div
-                                            class="elementi_elenco"><?php echo '[<a href="main.php?page=scheda&pg=' . gdrcd_filter('out',
-                                                    $record['destinatario']) . '"  >' . gdrcd_filter('out',
-                                                    $record['destinatario']) . '</a>]: ' . gdrcd_filter('out',
-                                                    $record['testo']); ?></div>
-                                    </td>
-                                </tr>
-                            <?php }//while
-
-                            gdrcd_query($result, 'free');
-                            ?>
-                        </table>
-                    </div>
-                <?php }//if
-                ?>
-            <?php }//if spymessages on
-            ?>
-
-
-
             <?php /*Seleziono gli ultimi login*/
             $query = "SELECT  descrizione_evento, data_evento, autore  FROM log WHERE nome_interessato = '" . gdrcd_filter('in',
                     $_REQUEST['pg']) . "'  AND codice_evento = " . CHANGEDNAME . " ORDER BY data_evento DESC LIMIT " . $num_logs . "";

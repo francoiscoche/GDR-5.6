@@ -37,8 +37,7 @@ if ($_POST['op']=='add') {
         $dest = $load_blocco['pg'];
 
         #Invio
-        #gdrcd_query("INSERT INTO messaggi (mittente, destinatario, spedito, testo) VALUES ('Sistema esiti',
-        # '" . gdrcd_filter('in', $dest) . "', NOW(), '" . gdrcd_filter('in', $text). "')");
+        #gdrcd_sendSystemMsg(gdrcd_filter('in', $dest), gdrcd_filter('in', $text));
 
         /*Eseguo l'inserimento del singolo esito*/
         gdrcd_query("INSERT INTO esiti (titolo, pg, autore, contenuto, noteoff, id_ab, chat, CD_1, CD_2, 
@@ -63,6 +62,5 @@ if ($_POST['op']=='add') {
         <div class="warning">
             <?php echo gdrcd_filter('out',$MESSAGE['warning']['inserted']);?>
         </div>
-        <br><a href="main.php?page=gestione_segnalazioni&segn=esiti_master">Torna indietro</a>
     <?php  	   }
 } ?>

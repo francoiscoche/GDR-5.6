@@ -119,6 +119,7 @@ div.elenco_presenti::-webkit-scrollbar-track {
 div.elenco_presenti {
 	max-height: 100px;
 	overflow: overlay;
+	color:#d9d9d9;
 }
 
 .page_title-presenti h2 {

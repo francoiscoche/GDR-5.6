@@ -35,20 +35,15 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
 
                 if($PARAMETERS['mode']['dices'] == 'ON') {
                     mt_srand((double) microtime() * 1000000);
-                    $dice=($_POST['dice']!='no_dice')?$_POST['dice']:'1';
-
-                   $die = mt_rand(1, (int) $dice);
+                    $die = mt_rand(1, (int) $_POST['dice']);
 
                     $chat_dice_msg = gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['die']).' '.gdrcd_filter('num', $die).',';
                 } else {
                     $chat_dice_msg = '';
                     $die = 0;
                 }
-                $car=gdrcd_filter('num', $car['car_now']) + gdrcd_filter('num',$racial_bonus['racial_bonus']);
-                $carr=gdrcd_filter('num', $car['car_now']) + gdrcd_filter('num',$racial_bonus['racial_bonus']) + gdrcd_filter('num', $die) +gdrcd_filter('num', $rank['grado']) + gdrcd_filter('num', $bonus['bonus']);
-                $testo="{$_SESSION['login']} ".gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['uses'])." <b>". gdrcd_filter('in', $skill['nome']).":</b> ".gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$skill['car'].'']) ." {$car}, {$chat_dice_msg} ". gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['ramk']). " " .gdrcd_filter('num', $rank['grado']) .", ". gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['items']). " " . gdrcd_filter('num', $bonus['bonus']) . ", ". gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['sum']) . " {$carr}"   ;
 
-                gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'C', '{$testo}')");
+                gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'C', '".$_SESSION['login'].' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['uses']).' '.gdrcd_filter('in', $skill['nome']).': '.gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$skill['car'].'']).' '.gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']).', '.$chat_dice_msg.' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['ramk']).' '.gdrcd_filter('num', $rank['grado']).', '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['items']).' '.gdrcd_filter('num', $bonus['bonus']).', '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['sum']).' '.(gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']) + gdrcd_filter('num', $die) + gdrcd_filter('num', $rank['grado']) + gdrcd_filter('in', $bonus['bonus']))."')");
             } else {
                 gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '".gdrcd_capital_letter(gdrcd_filter('in', $_SESSION['login'])."', NOW(), 'S', '".gdrcd_filter('in', $MESSAGE['status_pg']['exausted'])."')"));
             }
@@ -66,15 +61,16 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
             $car = gdrcd_query("SELECT car".gdrcd_filter('num', $id_stats[1])." AS car_now FROM personaggio WHERE nome = '".$_SESSION['login']."' LIMIT 1");
 
             $racial_bonus = gdrcd_query("SELECT bonus_car".gdrcd_filter('num', $id_stats[1])." AS racial_bonus FROM razza WHERE id_razza IN (SELECT id_razza FROM personaggio WHERE nome='".$_SESSION['login']."')");
-            $car=gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']);
-            $carr=gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']) + gdrcd_filter('num', $die) ;
-            $testo="{$_SESSION['login']} ".gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['uses'])." ".gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$id_stats[1]]).": ".gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$id_stats[1].''])." {$car}, ".gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['die'])." " .gdrcd_filter('num', $die).", ".gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['sum'])."{$carr}";
 
-            gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'C', '{$testo}')");
+            $bonus_malus = $_POST['bonus_malus'];
+
+
+            gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'C', '".$_SESSION['login'].' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['uses']).' '.gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$id_stats[1]]).': '.gdrcd_filter('in', $PARAMETERS['names']['stats']['car'.$id_stats[1].'']).' '.gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']).', '.gdrcd_filter('in', $MESSAGE['chat']['commands']['bonus_malus']['bonus']).' '.gdrcd_filter('num', $bonus_malus).', '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['die']).' '.gdrcd_filter('num', $die).', '.gdrcd_filter('in', $MESSAGE['chat']['commands']['use_skills']['sum']).' '.(gdrcd_filter('num', $car['car_now'] + $racial_bonus['racial_bonus']) + gdrcd_filter('num', $die) + gdrcd_filter('num', $rank['grado']) + $bonus_malus)."')");
 
         } elseif( (gdrcd_filter('get', $_POST['dice']) != 'no_dice') && !empty($_POST['dice']) ){
             mt_srand((double) microtime() * 1000000);
-            $die = mt_rand(1, gdrcd_filter('num', $_POST['dice']));
+            $die = mt_rand(1, gdrcd_filter('num', $_POST['dice'])) + 20;
+
 
             gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'D', '".$_SESSION['login'].' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['die']['cast']).gdrcd_filter('num', $_POST['dice']).': '.gdrcd_filter('in', $MESSAGE['chat']['commands']['die']['sum']).' '.gdrcd_filter('num', $die)."')");
         } elseif( (gdrcd_filter('get', $_POST['id_item']) != 'no_item') && !empty($_POST['id_item']) ) {
@@ -90,8 +86,6 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                         WHERE oggetto.id_oggetto='{$item}'
                           AND clgpersonaggiooggetto.nome='{$me}' LIMIT 1");
 
-            // Informazioni dell'oggetto
-            $nomeOggetto = gdrcd_filter_out($data['nome']);
             $cariche = gdrcd_filter('num',$data['cariche']);
             $numero = gdrcd_filter('num',$data['numero']);
             $new_cariche = gdrcd_filter('num',$data['new_cariche']);
@@ -121,7 +115,7 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
 
             gdrcd_query($query);
 
-            gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'O', '".$_SESSION['login'].' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['die']['item']).': '.gdrcd_filter('in', $nomeOggetto)."')");
+            gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '', NOW(), 'O', '".$_SESSION['login'].' '.gdrcd_filter('in', $MESSAGE['chat']['commands']['die']['item']).': '.gdrcd_filter('in', $item[2])."')");
         }
     }
 
@@ -131,13 +125,15 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
 
         $chat_message = gdrcd_filter('in', gdrcd_angs($_POST['message']));
         $tag_n_beyond = gdrcd_filter('in', $_POST['tag']);
+        $tag_poteri = gdrcd_filter('in', $_POST['tag_poteri']);
+
         $type = gdrcd_filter('in', $_POST['type']);
         $first_char = substr($chat_message, 0, 1);
 
         if($PARAMETERS['mode']['exp_by_chat'] == 'ON') {
             $msg_length = strlen($chat_message);
             $char_needed = gdrcd_filter('num', $PARAMETERS['settings']['exp_by_chat']['number']);
-            $exp_bonus = ($PARAMETERS['settings']['exp_by_chat']['value'] == '0') ? $msg_length / $char_needed : gdrcd_filter_num($PARAMETERS['settings']['exp_by_chat']['value']);
+            $exp_bonus = (gdrcd_filter('in', $PARAMETERS['settings']['exp_by_chat']['value']) == '0') ? $msg_length / $char_needed : gdrcd_filter('in', $PARAMETERS['settings']['exp_by_chat']['value']);
         }
 
         if($type < "5") {
@@ -164,6 +160,7 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                         }
                     } else {
                         $tag_n_beyond = $_SESSION['tag'];
+                        // $tag_poteri = $_SESSION['poteri'];
                     }
                 } elseif($first_char == "#") { //Dado
                     $m_type = 'C';
@@ -223,18 +220,18 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                 $mappa = gdrcd_query("SELECT * FROM mappa where id = '".$_SESSION['luogo']."'");
 
                 if ($mappa['privata']==1 && strtotime($mappa['scadenza']) < time()) {
-                    gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_n_beyond))."', NOW(), 'M', 'Chat scaduta')");
+                    gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, poteri, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_n_beyond))."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_poteri))."', NOW(), 'M', 'Chat scaduta')");
                 } else {
-                    gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_n_beyond))."', NOW(), '".$m_type."', '".$chat_message."')");
+                    gdrcd_query("INSERT INTO chat ( stanza, imgs, mittente, destinatario, poteri, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", '".$_SESSION['sesso'].";".$_SESSION['img_razza']."', '".$_SESSION['login']."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_n_beyond))."', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_poteri))."', NOW(), '".$m_type."', '".$chat_message."')");
                 }
 
                 if($PARAMETERS['mode']['exp_by_chat'] == 'ON') {
                     if($PARAMETERS['mode']['exp_in_private'] == 'ON') {
-                        if($mappa['privata']==0 && ($m_type == 'A' || $m_type == 'P' || $m_type == 'M')) {
+                        if($mappa['privata']==0 && ($m_type != 'A' || $m_type == 'P' || $m_type == 'M')) {
                             gdrcd_query("UPDATE personaggio SET esperienza = esperienza + ".$exp_bonus." WHERE nome = '".$_SESSION['login']."' LIMIT 1");
                         }
                     } else {
-                        if($m_type == 'A' || $m_type == 'P' || $m_type == 'M') {
+                        if($m_type != 'A' || $m_type == 'P' || $m_type == 'M') {
                             gdrcd_query("UPDATE personaggio SET esperienza = esperienza + ".$exp_bonus." WHERE nome = '".$_SESSION['login']."' LIMIT 1");
                         }
                     }
@@ -253,7 +250,7 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                 gdrcd_query("INSERT INTO chat ( stanza, mittente, destinatario, ora, tipo, testo ) VALUES (".$_SESSION['luogo'].", 'System message', '".$_SESSION['login']."', NOW(), 'S', '".gdrcd_capital_letter(gdrcd_filter('in', $tag_n_beyond)).' '.$MESSAGE['chat']['warning']['invited']."')");
 
                 if(empty($_POST['tag']) === false) {
-                    gdrcd_query("INSERT INTO messaggi ( mittente, destinatario, spedito, letto, testo ) VALUES ('System message', '".gdrcd_capital_letter(gdrcd_filter('in', $_POST['tag']))."', NOW(), 0,  '".$_SESSION['login'].' '.$MESSAGE['chat']['warning']['invited_message'].' '.$info['nome']."')");
+					gdrcd_sendSystemMsg(gdrcd_capital_letter(gdrcd_filter('in', $_POST['tag'])), gdrcd_filter('in', $_SESSION['login'].' '.$MESSAGE['chat']['warning']['invited_message'].' '.$info['nome']));
                 }
             } else {
                 if(($type == "6") && ($ok_command === true)) { //caccia
@@ -282,11 +279,11 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
      * facendo risultare quindi sempre veritiero il controllo in questo caso.
      * @author Blancks
      */
-    $query = gdrcd_query("	SELECT chat.id, chat.imgs, chat.mittente, chat.destinatario, chat.tipo, chat.ora, chat.testo, personaggio.url_img_chat, mappa.ora_prenotazione
+    $query = gdrcd_query("	SELECT chat.id, chat.imgs, chat.mittente, chat.destinatario, chat.poteri, chat.tipo, chat.ora, chat.testo, personaggio.url_img_chat, mappa.ora_prenotazione
             FROM chat
             INNER JOIN mappa ON mappa.id = chat.stanza
             LEFT JOIN personaggio ON personaggio.nome = chat.mittente
-            WHERE chat.id > ".$last_message." AND stanza = ".$_SESSION['luogo']." AND chat.ora > IFNULL(mappa.ora_prenotazione, '0000-00-00 00:00:00') AND DATE_SUB(NOW(), INTERVAL 30 MINUTE) < ora ORDER BY id ".$typeOrder, 'result');
+            WHERE chat.id > ".$last_message." AND stanza = ".$_SESSION['luogo']." AND chat.ora > IFNULL(mappa.ora_prenotazione, '0000-00-00 00:00:00') AND DATE_SUB(NOW(), INTERVAL 120 MINUTE) < ora ORDER BY id ".$typeOrder, 'result');
     while($row = gdrcd_query($query, 'fetch')) {
         //Impedisci XSS nelle immagini
         $row['url_img_chat'] = gdrcd_filter('fullurl', $row['url_img_chat']);
@@ -309,24 +306,25 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                 /** * Avatar di chat
                  * @author Blancks
                  */
-                if($PARAMETERS['mode']['chat_avatar'] == 'ON' && ! empty($row['url_img_chat'])) {
-                    $chat_avatar = '<img src="'.$row['url_img_chat'].'" class="chat_avatar" style="width:'.$PARAMETERS['settings']['chat_avatar']['width'].'px; height:'.$PARAMETERS['settings']['chat_avatar']['height'].'px;" />';
+                if ($row['tipo'] != 'A') {
+                    if ($PARAMETERS['mode']['chat_avatar'] == 'ON' && ! empty($row['url_img_chat'])) {
+                        $chat_avatar = '<img src="'.$row['url_img_chat'].'" class="chat_avatar" style="width:'.$PARAMETERS['settings']['chat_avatar']['width'].'px; height:'.$PARAMETERS['settings']['chat_avatar']['height'].'px;" />';
 
-                    // Se è stato impostato il link sull'avatar di chat, avvio la costruzione
-                    if(isset($PARAMETERS['settings']['chat_avatar']['link']['mode']) and ($PARAMETERS['settings']['chat_avatar']['link']['mode']  == 'ON')) {
-                        $chat_avatar_url = ( isset($PARAMETERS['settings']['chat_avatar']['link']['popup']) and ($PARAMETERS['settings']['chat_avatar']['link']['popup'] == 'ON') )
-                            ? "javascript:modalWindow('scheda', 'Scheda di ". $row['mittente'] ."', 'popup.php?page=scheda&pg=". $row['mittente'] ."');"
-                            : "main.php?page=scheda&pg=".$row['mittente'];
+                        // Se è stato impostato il link sull'avatar di chat, avvio la costruzione
+                        if (isset($PARAMETERS['settings']['chat_avatar']['link']['mode']) and ($PARAMETERS['settings']['chat_avatar']['link']['mode']  == 'ON')) {
+                            $chat_avatar_url = (isset($PARAMETERS['settings']['chat_avatar']['link']['popup']) and ($PARAMETERS['settings']['chat_avatar']['link']['popup'] == 'ON'))
+                                ? "javascript:modalWindow('scheda', 'Scheda di ". $row['mittente'] ."', 'popup.php?page=scheda&pg=". $row['mittente'] ."');"
+                                : "main.php?page=scheda&pg=".$row['mittente'];
 
-                        // Inserisco l'avatar di chat cliccabile
-                        $add_chat .= '<a href="'.$chat_avatar_url.'">'.$chat_avatar.'</a>';
-                    }
-                    // Altrimenti mostro solo l'avatar di chat
-                    else {
-                        $add_chat .= $chat_avatar;
+                            // Inserisco l'avatar di chat cliccabile
+                            $add_chat .= '<a href="'.$chat_avatar_url.'">'.$chat_avatar.'</a>';
+                        }
+                        // Altrimenti mostro solo l'avatar di chat
+                        else {
+                            $add_chat .= $chat_avatar;
+                        }
                     }
                 }
-
                 $add_chat .= '<span class="chat_time">'.gdrcd_format_time($row['ora']).'</span>';
 
                 if($PARAMETERS['mode']['chaticons'] == 'ON') {
@@ -340,6 +338,9 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                 $add_chat .=  ($row['tipo'] === 'P') ? ': </span> ' : '</span> ';
                 $add_chat .= '<span class="chat_msg">'.gdrcd_chatme($_SESSION['login'], gdrcd_chatcolor(gdrcd_filter('out', $row['testo']))).'</span>';
 
+                if (empty ($row['poteri']) === false) {
+                    $add_chat .= '<span class="chat_tag"> [' . gdrcd_filter('out', $row['poteri']) . ']</span>';
+                }
                 /**    * Fix problema visualizzazione spazi vuoti con i sussurri
                  * @author eLDiabolo
                  */
@@ -365,7 +366,8 @@ if((gdrcd_filter_get($_REQUEST['chat']) == 'yes') && (empty($_SESSION['login']) 
                 $add_chat .= '<span class="chat_msg">'.gdrcd_chatcolor(gdrcd_filter('out', $row['testo'])).'</span>';
                 break;
             case 'M':
-                $add_chat .= '<span class="chat_master">'.gdrcd_chatme($_SESSION['login'], gdrcd_chatcolor(gdrcd_filter('out', $row['testo'])), true).'</span>';
+                $add_chat .= '<span class="chat_time">'.gdrcd_format_time($row['ora']).'</span>';
+                $add_chat .= '<span class="chat_master">'.gdrcd_chatme($_SESSION['login'], gdrcd_filter('out', $row['testo']), true).'</span>';
                 break;
             case 'I':
                 $add_chat .= '<img class="chat_img" src="'.gdrcd_filter('fullurl', $row['testo']).'" />';

@@ -32,7 +32,7 @@ div.tabs {
   zoom: 0.7;
 -ms-zoom: 0.7;
 -webkit-zoom: 0.7;
--moz-transform:  scale(0.7,0.7);
+/* -moz-transform:  scale(0.7,0.7); */
 
 }
 .tab-content  {

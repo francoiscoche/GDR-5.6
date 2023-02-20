@@ -66,7 +66,7 @@ if(gdrcd_query($result, 'num_rows') == 0) {
          * Features: link a sottomappe e link immagine
          * @author Blancks
          */
-        echo '<div style="position:absolute; margin:', $row['y_cord'], 'px 0 0 ', $row['x_cord'], 'px;">';
+        echo '<div class="map_color_title" style="position:absolute; margin:', $row['y_cord'], 'px 0 0 ', $row['x_cord'], 'px;">';
 
         $qstring_link = '';
         $label_link = '';

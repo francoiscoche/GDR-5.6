@@ -12,7 +12,7 @@
 
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif !important;
 }
 
 a {
@@ -155,7 +155,8 @@ span.titoli_elenco {
 
 
 /* CSS */
-input[type=submit] {
+input[type=submit]
+{
 	background-color: #6d8972;
 	border: 1px solid transparent;
 	border-radius: 3px;
@@ -205,36 +206,53 @@ input[type=submit]:active {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: #f1f1f1;
+	background: #1e1e1e;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #888;
+	background: #5d7064;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: #465c4d ;
 }
 
 /* logout page */
-
 .logout_body {
-	background-image: url("../advanced/imgs/custom_imgs/EXIT_completa.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color: #031011;
-	background-position: center;
+	background: #031011;
+}
+.logout_div {
+    background-image: url(../advanced/imgs/custom_imgs/EXIT_completa.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 438px;
+    width: 100%;
+    position: fixed;
+    top: 216px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* margin: 15px; */
 }
 
 
 /********************************************************/
 /* CALENDARIO */
 /********************************************************/
-
+.pagina_calendario .calendario,
+.pagina_calendario .eventi {
+	border:none;
+}
 .pagina_calendario {
-	background: #b9b9b91a !important;
+	background: #151e1f !important;
+}
+
+.pagina_calendario  .fc-daygrid-day-bottom {
+    padding-top: 18px !important;
 }
 
 .fc-theme-standard .fc-popover {
@@ -243,11 +261,11 @@ input[type=submit]:active {
 
 .intestazione_eventi,
 .descrizione_eventi {
-	background: #184449 !important;
+	background: #455448 !important;
 }
 
 #dialog-calendario {
-	height: 449.821px !important;
+	height: 480px !important;
 }
 
 /********************************************************/
@@ -303,7 +321,16 @@ td.forum_other_post_message {
 	text-align: center;
 }
 
-.form_submit input[type=submit] {
+div.pagina_user_cambio_pass div.form_field,
+div.pagina_user_cambio_nome div.form_field,
+div.pagina_scheda_roles div.search_bg select[name=type],
+div.pagina_servizi_adm_gilde div.form_element select[name=ruolo],
+div.pagina_servizi_banca div.form_gioco div.form_field,
+div.pagina_gestione_permessi div.form_field select[name=nome] {
+	margin-bottom: 20px !important;
+}
+.form_submit input[type=submit],
+.pagina_scheda_roles div.page_body form {
   margin: 20px 0px 20px 0px;
 }
 
@@ -315,11 +342,46 @@ input[name=modifica_salute],
 input[name=new_name],
 input[name=message],
 input[name=tag],
+input[name=tag_poteri],
 input[name=px],
 input[name=new_email],
+input[name=email],
+input[name=new_pass	],
 input[name=data],
 input[name=data_a],
-input[name=data_b]
+input[name=modifica_banca],
+input[name=modifica_salute_max],
+input[name=titolo],
+input[name=nome],
+input[name=data_b],
+input[name=immagine],
+input[name=url_sito],
+input[name=stipendio],
+input[name=sing_m],
+input[name=sing_f],
+input[name=car0],
+input[name=car1],
+input[name=car2],
+input[name=car3],
+input[name=car4],
+input[name=car5],
+input[name=icon],
+input[name=site],
+input[name=image_button],
+input[name=image_button_hover],
+input[name=pagina],
+input[name=stanza_apparente],
+input[name=x_cord],
+input[name=y_cord],
+input[name=costo],
+input[name=nome],
+input[name=posizione],
+input[name=larghezza],
+input[name=immagine],
+input[name=altezza],
+input[name=start],
+input[name=end],
+button.but_roles
 
 {
 	background-color: #1c271e;
@@ -336,11 +398,160 @@ div.form_field input.healt_input {
 	width: 70px;
 }
 
+select[name=car0],
+select[name=car1],
+select[name=car2],
+select[name=car3],
+select[name=car4] {
+	width: 140px;
+}
+
 select.day,
 select.month,
 select.year,
-select#dice,
-select#type,
 select[name=iniziale] {
 	width: 120px;
+}
+
+
+
+
+
+.logout_box {
+	display:none;
+}
+
+.logout-link {
+    width: 110px;
+    height: 30px;
+    display: block;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+div.pagina_servizi_anagrafe div.elenco_record_gioco,
+table.table-select {
+	width: 900px;
+    margin: 0 auto;
+}
+
+.table.table-select thead,
+.table.table-select tbody {
+ padding: 10px;
+}
+div.pagina_servizi_anagrafe div.elenco_record_gioco th.ana-personaggio {
+	width: 200px;
+}
+div.pagina_servizi_anagrafe div.elenco_record_gioco th.ana-message {
+	width: 300px;
+}
+
+div.pagina_servizi_anagrafe div.elenco_record_gioco {
+	padding: 20px 0px 0px 0px;
+}
+
+div.pagina_servizi_anagrafe img.chat_avatar {
+	float: none;
+}
+
+/* MAP */
+div.map_color_title a {
+	color:rgb(28, 118, 125) !important;
+	transition: 0.15s;
+}
+div.map_color_title a:hover{
+	color:rgb(218, 151, 113) !important;
+}
+
+div.pagina_calendario  button[type=button] {
+	background-color: #6d8972 !important;
+	border: 0px solid transparent;
+}
+
+div.pagina_calendario  button[type=submit] {
+	background-color: #6d8972;
+	transition: 0.2s;
+	margin: 20px 5px 20px 20px;
+	border: 0px solid transparent;
+	border-radius: 3px;
+	/* box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset; */
+}
+
+div.pagina_calendario  button[type=submit]:hover,
+div.pagina_calendario  button[type=button]:hover {
+	background-color: #233f28 !important;
+}
+
+
+
+/* CONTATTI */
+div.pagina_scheda_diario div.fake-table.index-table .td {
+    vertical-align: middle;
+}
+
+div.pagina_scheda_diario .contatti_avatar {
+	width: 50px;
+    height: 50px;
+    border-radius: 300px;
+}
+
+div.pagina_servizi_gilde div.capitolo_elenco {
+    background-color: #263f35;
+}
+
+ div.registra_giocata {
+	color:white;
+	padding: 20px;
+}
+
+
+
+
+
+
+div.pagina_scheda_roles div.elenco_record_gioco table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+div.pagina_scheda_roles div.elenco_record_gioco table td {
+	padding: 10px;
+}
+
+
+.tooltiplink {
+    display:inline-block;
+    position:relative;
+    border-bottom:1px dotted #666;
+    text-align:left;
+}
+
+.tooltiplink .tooltiptext {
+    min-width:200px;
+    top:-20px;
+    left:60%;
+    transform:translate(0%, -100%);
+    padding:10px 20px;
+    color: #c9c9c9;
+    background-color: #003034;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    display:none;
+	transition: 0.3s;
+}
+
+.tooltiplink:hover .tooltiptext {
+    display:block;
 }

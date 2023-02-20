@@ -32,7 +32,7 @@ $MESSAGE['homepage']['installer']['install_title'] = 'Installazione Database GDR
 $MESSAGE['homepage']['installer']['install_text'] = 'Vuoi procedere con l&#039;installazione del database di GDRCD?';
 $MESSAGE['homepage']['installer']['migrate'] = 'Riporta il database alla seguente versione';
 $MESSAGE['homepage']['installer']['migrate_warn'] = 'ATTENZIONE: questa funzione ripristina solo le struttura del database, non può ripristinare dati che sono stati cancellati';
-$MESSAGE['homepage']['installer']['install_text'] = 'Vuoi procedere con l&#039;installazione del database di GDRCD?';
+$MESSAGE['homepage']['installer']['install_text'] = 'Vuoi procedere con l&#039;installazione del dataase di GDRCD?';
 $MESSAGE['installer']['instal'] = "Installa il database.";
 $MESSAGE['homepage']['updater']['done'] = 'Il Database è stato reso compatibile con GDRCD5.4';
 $MESSAGE['homepage']['updater']['update'] = 'Aggiorna adesso il database.';
@@ -68,7 +68,7 @@ $MESSAGE['register']['fields']['stats'] = 'Caratteristiche';
 $MESSAGE['register']['fields']['stats_info'] = 'La somma dei punteggi deve essere';
 $MESSAGE['register']['summary'] = 'Riepilogo';
 /* Condizioni */
-$MESSAGE['register']['disclaimer'] = 'Registrazione (ai sensi del D. Lgs n°196/2003 - Codice in materia di protezione dei dati personali): L\'utente, registrandosi, presta il consenso al trattamento dei suoi dati ed autorizza l\'inserimento degli stessi nella banca dati del gioco con il fine di inserirli nell\'elenco dei suoi utenti. Gli stessi dati NON saranno ceduti e utilizzati da alcun soggetto estraneo a chi, attualmente o in futuro, gestisce il presente gioco. I dati saranno trattati con strumenti elettronici e informatici serviranno esclusivamente per partecipare al gioco e per ricevere eventuali ed indispensabili comunicazioni tecniche via e-mail (come l’invio della psw all’indirizzo di posta elettronica dichiarata in sede di registrazione). Autorizzando al trattamento dei dati, l’utente autorizza non solo la registrazione dell’indirizzo e–mail ma permette la registrazione dell’indirizzo IP, l’ora dell’iscrizione e l’ora di ogni login.  L\'indicazione di dati personali completi è assolutamente volontaria e facoltativa. L\'interessato potrà  in ogni momento e gratuitamente esercitare i diritti di cui all\'art. 7 del D.Lgs n°196/2003, quali: la possibilità  di accedere ai registri del Garante, ottenere informazioni in relazione ai dati che lo riguardano, ottenere la cancellazione o il blocco, ovvero l\'aggiornamento, la rettifica o l\'integrazione inviando una e-mail all\'indirizzo indicato nella home page.';
+$MESSAGE['register']['disclaimer'] = 'Registrazione (ai sensi del D. Lgs n°196/2003 - Codice in materia di protezione dei dati personali): L\'utente, registrandosi, presta il consenso al trattamento dei suoi dati ed autorizza l\'inserimento degli stessi nella banca dati del gioco con il fine di inserirli nell\'elenco dei suoi utenti. Gli stessi dati NON saranno ceduti e utilizzati da alcun soggetto estraneo a chi, attualmente o in futuro, gestisce il presente gioco. I dati saranno trattati con strumenti elettronici e informatici serviranno esclusivamente per partecipare al gioco e per ricevere eventuali ed indispensabili comunicazioni tecniche via e-mail (come l’invio della psw all’indirizzo di posta elettronica dichiarata in sede di registrazione). Autorizzando al trattamento dei dati, l’utente autorizza non solo la registrazione dell’indirizzo e–mail ma permette la registrazione dell’indirizzo IP, l’ora dell’iscrizione e l’ora di ogni login.  L\'indicazione di dati personali completi è assolutamente volontaria e facoltativa. L\'interessato potrà  in ogni momento e gratuitamente esercitare i diritti di cui all\'art. 7 del D.Lgs n°196/2003, quali: la possibilità  di accedere ai registri del Garante, ottenere informazioni in relazione ai dati che lo riguardano, ottenere la cancellazione o il blocco, ovvero l\'aggiornamento, la rettifica o l\'integrazione inviando una e-mail all\'indirizzo indicato nella home page.';
 $MESSAGE['register']['rules_read'] = 'L\'utente dichiara inoltre di aver preso visione del regolamento, come proposto in homepage, di averlo compreso ed accettato in ogni sua parte, e di rispondere a tutti i requisiti richiesti, comprese le eventuali restrizioni di età.';
 /* Benvenuti */
 $MESSAGE['register']['welcome']['message']['subject'] = 'Registrazione a';
@@ -80,7 +80,7 @@ $MESSAGE['register']['welcome']['message']['pass'] = 'Password:';
 $MESSAGE['register']['welcome']['message']['ok'] = 'completata!';
 $MESSAGE['register']['welcome']['back'] = 'Torna alla';
 $MESSAGE['register']['welcome']['message'][3] = 'Il tuo username e la tua password ti sono stati inviati per email all\'indirizzo';
-$MESSAGE['register']['welcome']['message'][4] = 'Lo staff è lieto di darti il benvenuto e ti augura buon divertimento! Hai già letto l\ambientazione ed il regolameto? Se non è così ti invitiamo a farlo al più presto!.';
+$MESSAGE['register']['welcome']['message'][4] = 'La Gestione è lieta di darti il benvenuto e ti augura buon divertimento! Per iniziare a giocare leggi la documentazione e consulta il forum "Primi passi e crescita del pg".';
 /* Errori */
 $MESSAGE['register']['error']['name_taken'] = 'Il nome scelto è già in uso.';
 $MESSAGE['register']['error']['email_taken'] = 'Esiste già un account registrato con questa e-mail.';
@@ -113,8 +113,8 @@ $MESSAGE['interface']['multiple_page_found'] = 'Non e stato possibile determinar
 $MESSAGE['interface']['logged_users']['page_title'] = 'Utenti connessi';
 $MESSAGE['interface']['logged_users']['sing'] = 'Presente';
 $MESSAGE['interface']['logged_users']['plur'] = 'Presenti';
-$MESSAGE['interface']['logged_users']['logged_in'] = 'Sono entrati';
-$MESSAGE['interface']['logged_users']['logged_out'] = 'Sono usciti';
+// $MESSAGE['interface']['logged_users']['logged_in'] = 'Sono entrati';
+// $MESSAGE['interface']['logged_users']['logged_out'] = 'Sono usciti';
 /* Pannello informazioni */
 $MESSAGE['interface']['meteo']['title'] = 'Condizioni meteo';
 $MESSAGE['interface']['meteo']['status'][0] = 'Sereno';
@@ -124,7 +124,8 @@ $MESSAGE['interface']['meteo']['status'][3] = 'Pioggia';
 $MESSAGE['interface']['meteo']['status'][4] = 'Neve';
 /* Finestra delle mappe */
 $MESSAGE['interface']['maps']['more'] = 'Altre zone';
-$MESSAGE['interface']['maps']['no_more'] = 'Nessuna';
+// $MESSAGE['interface']['maps']['no_more'] = 'Nessuna';
+$MESSAGE['interface']['maps']['no_more'] = '';
 $MESSAGE['interface']['maps']['traveling'] = 'In viaggio...';
 $MESSAGE['interface']['maps']['arrive'] = 'Arriva a...';
 $MESSAGE['interface']['maps']['leave'] = 'Partenza';
@@ -145,7 +146,7 @@ $MESSAGE['interface']['sheet']['box_title']['background'] = 'Carattere e storia 
 $MESSAGE['interface']['sheet']['box_title']['relationships'] = 'Affetti';
 $MESSAGE['interface']['sheet']['profile']['role'] = 'Incarico utente';
 $MESSAGE['interface']['sheet']['profile']['no_race'] = 'sconosciuta';
-$MESSAGE['interface']['sheet']['profile']['occupation'] = 'Occupazione';
+$MESSAGE['interface']['sheet']['profile']['occupation'] = 'Ruoli';
 $MESSAGE['interface']['sheet']['profile']['experience'] = 'Esperienza';
 $MESSAGE['interface']['sheet']['profile']['status'] = 'Status';
 $MESSAGE['interface']['sheet']['profile']['uneployed'] = 'Disoccupato';
@@ -157,19 +158,21 @@ $MESSAGE['interface']['sheet']['menu']['equipment'] = 'Equipaggiamento';
 $MESSAGE['interface']['sheet']['menu']['diary'] = 'Diario';
 $MESSAGE['interface']['sheet']['menu']['gst'] = 'Amministra';
 $MESSAGE['interface']['sheet']['menu']['log'] = 'Log';
-$MESSAGE['interface']['sheet']['menu']['detail']='Descrizione e Conoscenze';
-$MESSAGE['interface']['sheet']['menu']['background']='Storia';
-$MESSAGE['interface']['sheet']['menu']['description']='Descrizione';
+$MESSAGE['interface']['sheet']['menu']['detail']='Avatar Metaverso';
+$MESSAGE['interface']['sheet']['menu']['background']='Note del fato';
+$MESSAGE['interface']['sheet']['menu']['status']='Note del fato';
+$MESSAGE['interface']['sheet']['menu']['description']='Avatar Metaverso';
 $MESSAGE['interface']['sheet']['menu']['friend']='Conoscenze';
 $MESSAGE['interface']['sheet']['modify_form']['last_name'] = 'Cognome';
 $MESSAGE['interface']['sheet']['modify_form']['relationships'] = 'Affetti';
 $MESSAGE['interface']['sheet']['modify_form']['background'] = 'Background';
 $MESSAGE['interface']['sheet']['modify_form']['online_state'] = 'Messaggio da mostrare nell\'elenco esteso degli online';
 $MESSAGE['interface']['sheet']['modify_form']['url_img'] = 'URL immagine';
+$MESSAGE['interface']['sheet']['modify_form']['prestavolto']='Prestavolto';
 $MESSAGE['interface']['sheet']['modify_form']['url_img_chat'] = 'URL immagine di chat';
 $MESSAGE['interface']['sheet']['modify_form']['url_media'] = 'URL media';
 $MESSAGE['interface']['sheet']['modify_form']['block_media'] = 'Disabilita tutti i suoni nel gioco';
-$MESSAGE['interface']['sheet']['modify_form']['status'] = 'Status';
+$MESSAGE['interface']['sheet']['modify_form']['status'] = 'Note del fato';
 $MESSAGE['interface']['sheet']['modify_form']['healt'] = 'Salute';
 $MESSAGE['interface']['sheet']['modify_form']['exile'] = 'Esilia fino al';
 $MESSAGE['interface']['sheet']['modify_form']['unexile'] = 'Annulla esilio';
@@ -370,10 +373,8 @@ $MESSAGE['interface']['hotel']['room'] = 'Stanza';
 $MESSAGE['interface']['hotel']['hours'] = 'Ore';
 $MESSAGE['interface']['hotel']['per_hour'] = 'per ogni ora';
 $MESSAGE['interface']['hotel']['no_bucks'] = 'Non hai con te abbastanza denaro.';
-$MESSAGE['interface']['hotel']['already_booked_by_user'] = 'Hai già prenotato la stanza!';
 $MESSAGE['interface']['hotel']['back'] = 'Indietro';
 $MESSAGE['interface']['hotel']['ok'] = 'Prenotazione completata';
-$MESSAGE['interface']['hotel']['form']['bookRoom']['title'] = 'Prenota Stanza';
 /*Anagrafe*/
 $MESSAGE['interface']['pg_list']['pg_list'] = 'Anagrafe';
 $MESSAGE['interface']['pg_list']['select'] = 'Visualizza il personaggio';
@@ -654,12 +655,6 @@ $MESSAGE['interface']['user']['pass']['new'] = 'Inserire la nuova password';
 $MESSAGE['interface']['user']['pass']['force'] = 'Cambia password ad un account';
 $MESSAGE['interface']['user']['pass']['submit']['user'] = 'Salva';
 $MESSAGE['interface']['user']['pass']['change_to'] = 'Cambia a...';
-/*Cambio email*/
-$MESSAGE['interface']['user']['email']['page_name'] = 'Cambio password';
-$MESSAGE['interface']['user']['email']['email'] = 'Inserire la nuova mail';
-$MESSAGE['interface']['user']['email']['new'] = 'Selezionare personaggio';
-$MESSAGE['interface']['user']['email']['submit']['user'] = 'Cambia email';
-$MESSAGE['interface']['user']['email']['change_to'] = 'Cambia a...';
 /*Cancella account*/
 $MESSAGE['interface']['user']['delete']['page_name'] = 'Cancella account';
 $MESSAGE['interface']['user']['delete']['email'] = 'Inserire la EMail di registrazione per conferma';
@@ -742,7 +737,7 @@ $MESSAGE['warning']['changepass_signup'] = 'Attenzione: per la tua sicurezza, lo
 
 $MESSAGE['warning']['mailto'] = 'Per richiedere assistenza contattare:';
 $MESSAGE['warning']['please_login_again'] = 'Per effettuare un nuovo login torna alla ';
-$MESSAGE['warning']['modified'] = 'Modifica eseguita';
+$MESSAGE['warning']['modified'] = '';
 $MESSAGE['warning']['inserted'] = 'Inserimento eseguito';
 $MESSAGE['warning']['done'] = 'Operazione eseguita';
 $MESSAGE['warning']['deleted'] = 'Cancellazione eseguita';
@@ -780,8 +775,8 @@ $MESSAGE['status_pg']['invisible'][1] = 'Invisibile';
 
 /********** Chat **********/
 $MESSAGE['chat']['type']['info'] = 'Tipo';
-$MESSAGE['chat']['type'][0] = 'Parlato';
-$MESSAGE['chat']['type'][1] = 'Azione';
+$MESSAGE['chat']['type'][0] = 'Azione';
+$MESSAGE['chat']['type'][1] = 'Off';
 $MESSAGE['chat']['type'][2] = 'Master';
 $MESSAGE['chat']['type'][3] = 'PNG';
 $MESSAGE['chat']['type'][4] = 'Sussurro';
@@ -796,6 +791,9 @@ $MESSAGE['chat']['tag']['info']['tag'] = 'Tag';
 $MESSAGE['chat']['tag']['info']['png'] = '/PNG';
 $MESSAGE['chat']['tag']['info']['dst'] = '/Dest.';
 $MESSAGE['chat']['tag']['info']['msg'] = 'Messaggio/Azione';
+$MESSAGE['chat']['tag']['info']['poteri'] = 'Poteri';
+$MESSAGE['chat']['tag']['info']['abilita'] = 'Abilità';
+$MESSAGE['chat']['tag']['info']['oggetti'] = 'Oggetti.';
 $MESSAGE['chat']['whisper']['no'] = 'non è presente';
 $MESSAGE['chat']['whisper']['privat'] = 'Chat riservata';
 $MESSAGE['chat']['whisper']['to'] = 'Sussurri a';
@@ -841,3 +839,33 @@ $MESSAGE['interface']['forms']['save'] = 'Salva';
 $MESSAGE['interface']['pager']['pages_name'] = 'Pagine';
 /*Help*/
 $MESSAGE['interface']['help']['bbcode'] = 'BBCode: [b]Bold[/b], [i]Italic[/i], [u]Sottolineato[/u], [color=colore]Colorato[/color], [img]Indirizzo-immagine[/img].';
+
+
+/********** Gruppi di messaggio **********/
+$MESSAGE['interface']['administration']['maintenance']['old_group_info'] = 'Verranno eliminati anche tutti i gruppi (e relativi membri) che non contengono più messaggi';
+$MESSAGE['interface']['messages']['subjectgroup'] = 'Nome del gruppo';
+$MESSAGE['interface']['messages']['multiple']['options']['recipients'] = 'Usa campo destinatario';
+$MESSAGE['interface']['msggrp']['name'] = 'Gruppo';
+$MESSAGE['interface']['msggrp']['go_back'] = 'Torna all\'elenco dei gruppi';
+$MESSAGE['interface']['msggrp']['new'] = 'Crea un nuovo gruppo';
+$MESSAGE['interface']['msggrp']['with'] = 'Con';
+$MESSAGE['interface']['msggrp']['last'] = 'Ultimo messaggio';
+$MESSAGE['interface']['msggrp']['nogroup'] = 'Nessun gruppo';
+$MESSAGE['interface']['msggrp']['markallasread'] = 'Segna tutti i gruppi %1 come letti';
+$MESSAGE['interface']['msggrp']['comfirmleaving'] = 'Stai abbandonando il gruppo.\nConfermi?';
+$MESSAGE['interface']['msggrp']['comfirmdel'] = 'Stai eliminando il gruppo.\nConfermi?';;
+$MESSAGE['interface']['msggrp']['erase'] = 'Elimina';
+$MESSAGE['interface']['msggrp']['leave'] = 'Abbandona';
+$MESSAGE['interface']['msggrp']['reply'] = 'Rispondi';
+$MESSAGE['interface']['msggrp']['gestgrp'] = 'Gestione gruppo';
+$MESSAGE['interface']['msggrp']['dsgroupmod'] = 'Modifica nome gruppo';
+$MESSAGE['interface']['msggrp']['addmember'] = 'L\'utente selezionato verrà aggiunto al gruppo';
+$MESSAGE['interface']['msggrp']['removemember'] = 'L\'utente selezionato verrà rimosso dal gruppo';
+
+
+$MESSAGE['interface']['sheet']['contact']['name']='Nome';
+$MESSAGE['interface']['sheet']['contact']['alias']='Alias';
+$MESSAGE['interface']['sheet']['contact']['note']='Descrizione';
+$MESSAGE['interface']['sheet']['menu']['contact'] = 'Contatti PG';
+$MESSAGE['interface']['sheet']['contact']['back']='Torna ai contatti';
+$MESSAGE['interface']['sheet']['contact']['new']='Nuovo contatto';

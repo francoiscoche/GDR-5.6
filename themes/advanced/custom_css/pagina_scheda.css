@@ -5,6 +5,7 @@
 div.pagina_scheda {
 	width: auto;
     min-height: 710px;
+	color: #d9d9d9;
 }
 
 div.menu_scheda {
@@ -19,7 +20,7 @@ div.menu_scheda li {
 }
 
 div.profilo {
-	margin: 5px 21px 20px 5px;
+	margin: 20px 21px 20px 5px;
 	font-size: 15px;
 	width: 241px;
 }
@@ -41,8 +42,15 @@ div.pagina_scheda div.titolo_box {
 } */
 div.ritratto {
     position: relative;
-    top: 38px;
-    left: 102px;
+    /* top: 38px;
+    left: 102px; */
+	top: 41px;
+    left: 101px;
+	margin: 0;
+
+
+	width: auto;
+     height: auto;
 }
 
 div.ritratto div.ritratto_avatar {
@@ -52,8 +60,10 @@ div.ritratto div.ritratto_avatar {
 }
 
 div.ritratto_avatar img {
-    max-width: none;
-    max-height: 320px;
+    width: 220px;
+    height: 322px;
+	max-width: none;
+	max-height: none;
 }
 
 .pagina_scheda {
@@ -62,7 +72,7 @@ div.ritratto_avatar img {
 	background-repeat: no-repeat;
 	background-color: #031011;
 	background-position: top;
-	border: 1px solid;
+	border: 1px solid #4d4d4d;
 }
 
 .pagina_scheda .page_title {
@@ -76,4 +86,44 @@ div.ritratto_avatar img {
 	text-shadow: -3px 3px 3px rgb(184 70 170);
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+
+.punti-caratteristiche {
+    border-radius: 15px;
+}
+.punti-caratteristiche tr {
+    padding: 7px;
+    display: block;
+}
+
+div.pagina_scheda  img.profilo_img_gilda {
+    height: 30px;
+    width: 30px;
+}
+
+div.pagina_scheda_storia  div.page_body {
+	padding: 20px 0px 20px 0px;
+    margin: 0px auto;
+	text-align: justify;
+	width: 500px;
+}
+
+div.pagina_scheda_diario .fake-table .tr {
+	color: #9e9e9e;
+	background: #152a2f;
+}
+
+.pagina_scheda_diario .fake-table .td {
+	width: auto;
+	text-align: justify;
+	padding: 10px;
+	color:#ccc;
+}
+
+.scheda-audio {
+	display: none;
+}
+
+div.menu_scheda .menu {
+	width: auto;
 }

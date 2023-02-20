@@ -21,7 +21,7 @@ $handleDBConnection = gdrcd_connect();
 
 
     # Recupero la giocata dall'id, dopo aver verificato che appartenga al pg
-    $check = gdrcd_query("SELECT mittente, stanza, data_inizio, data_fine FROM segnalazione_role WHERE id = " . gdrcd_filter('num', $_GET['id']) . " 
+    $check = gdrcd_query("SELECT mittente, stanza, data_inizio, data_fine FROM segnalazione_role WHERE id = " . gdrcd_filter('num', $_GET['id']) . "
         AND mittente = '" .gdrcd_filter('in', $_SESSION['login'] ). "'AND conclusa = 1 ", 'result');
     $num_check = gdrcd_query($check, 'num_rows');
     $check_f= gdrcd_query($check, 'fetch');
@@ -34,13 +34,13 @@ $handleDBConnection = gdrcd_connect();
     /*Query per caricamento dati dalla chat corrente, carica le azioni degli ultimi 240 min - 4 ore !! NON SALVA LE CHAT PRIVATE !!*/
 
 
-        $query = gdrcd_query("	SELECT chat.id, chat.imgs, chat.mittente, chat.destinatario, chat.tipo, chat.ora, 
+        $query = gdrcd_query("	SELECT chat.id, chat.imgs, chat.mittente, chat.destinatario, chat.tipo, chat.ora,
                                 chat.testo, personaggio.url_img_chat
                                 FROM chat
                                 INNER JOIN mappa ON mappa.id = chat.stanza
-                                LEFT JOIN personaggio ON personaggio.nome = chat.mittente 
-                                WHERE stanza = " . $check_f['stanza'] . " AND ora >= '" . gdrcd_filter('in', $check_f['data_inizio']) . "' 
-                                AND ora <= '" . gdrcd_filter('in', $check_f['data_fine']) . "' 
+                                LEFT JOIN personaggio ON personaggio.nome = chat.mittente
+                                WHERE stanza = " . $check_f['stanza'] . " AND ora >= '" . gdrcd_filter('in', $check_f['data_inizio']) . "'
+                                AND ora <= '" . gdrcd_filter('in', $check_f['data_fine']) . "'
                                 ORDER BY ora ". $typeOrder, 'result');
 
     /*Inizio a preparare il testo da inserire poi nel file da salvare.*/
@@ -57,7 +57,7 @@ $handleDBConnection = gdrcd_connect();
             <link rel="stylesheet" href="' . $PARAMETERS['info']['site_url'] . '/themes/' . $PARAMETERS['themes']['current_theme'] . '/chat.css" type="text/css" />
             <link rel="stylesheet" href="' . $PARAMETERS['info']['site_url'] . '/layouts/' . $PARAMETERS['themes']['kind_of_layout'] . '_frames.php?css=true" type="text/css" />
             </head>
-    
+
             <body class="main_body" style="overflow:auto; text-align:justify;">
             ';
 
@@ -420,4 +420,3 @@ $handleDBConnection = gdrcd_connect();
     }
 
 ?>
-

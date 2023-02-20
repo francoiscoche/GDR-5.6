@@ -16,17 +16,25 @@ gdrcd_query("UPDATE personaggio SET ora_uscita = NOW() WHERE nome='" . gdrcd_fil
     <meta http-equiv="Content-Type" content='text/html; charset=utf-8'>
     <link rel="stylesheet" href="themes/<?php echo $PARAMETERS['themes']['current_theme']; ?>/main.css" type='text/css'>
     <link rel="shortcut icon" href="imgs/favicon.ico"/>
+    <link rel="stylesheet" href="themes/<?php echo $PARAMETERS['themes']['current_theme']; ?>/custom.css" type="text/css" />
 </head>
 <body class="logout_body">
-    <div class="logout_box">
-        <span class="logout_text"><?php echo gdrcd_filter('out', $_SESSION['login']) . ' ' . $MESSAGE['logout']['confirmation']; ?></span>
-        <span class="logout_text">
-            <?php echo gdrcd_filter('out', $MESSAGE['logout']['logbackin']) . ' '; ?>
-            <a href="index.php">
-                <?php echo gdrcd_filter('out', $PARAMETERS['info']['homepage_name']); ?>
+    <div class="logout_div">
+        <div class="logout_box">
+            <span class="logout_text"><?php echo gdrcd_filter('out', $_SESSION['login']) . ' ' . $MESSAGE['logout']['confirmation']; ?></span>
+            <span class="logout_text">
+                <?php echo gdrcd_filter('out', $MESSAGE['logout']['logbackin']) . ' '; ?>
+                <a href="index.php">
+                    <?php echo gdrcd_filter('out', $PARAMETERS['info']['homepage_name']); ?>
+                </a>
+            </span>
+            <span class="logout_text"><?php echo gdrcd_filter('out', $MESSAGE['logout']['greeting']); ?></span>
+        </div>
+        <div class="logout-btn">
+            <a class="logout-link" href="index.php">
+                <!-- <?php echo gdrcd_filter('out', $PARAMETERS['info']['homepage_name']); ?> -->
             </a>
-        </span>
-        <span class="logout_text"><?php echo gdrcd_filter('out', $MESSAGE['logout']['greeting']); ?></span>
+    </div>
     </div>
 </body>
 </html>

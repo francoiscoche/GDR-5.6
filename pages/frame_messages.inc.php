@@ -3,3 +3,8 @@
         scrolling="no">
     <p><?php gdrcd_filter_out(print $MESSAGE['errors']['can_t_load_frame']) . ' (http://' . $PARAMETERS['info']['site_url'] . '/pages/frame/messages/index.inc.php'; ?></p>
 </iframe>
+
+<!--
+<a href="javascript:parent.modalWindow('rolesreg', '', 'popup.php?page=messages_center');">
+                                       Registra giocata
+                                    </a> -->
